@@ -1,0 +1,19 @@
+.headerrow{
+    margin-right:0;
+     margin-left: 0px; 
+     height: 80px;
+}
+.logo{
+    width:113%;
+    height:100%;
+    padding-left: 104px;
+}
+.addslogo{
+   width: 90%;
+    height: 80%;
+    margin-left: 6%;
+    margin-top: 2%;
+}
+.header{
+    background-color: #f5f5f5;
+}

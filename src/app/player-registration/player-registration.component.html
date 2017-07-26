@@ -1,0 +1,526 @@
+<div class="container-fluid maindiv-one">
+    <div  *ngIf="playersRegistrationobj.TournamentProfile">
+    <div>
+    <p class="h3 one-h3">PLAYER REGISTRATION</p>
+    </div>
+    <!--PLAYER REGISTRATION opstionse-->
+    <div class="breadcrumb flat  steppdiv">
+           <a  (click)="playerDetails(1)" [ngClass]="{'active':playersRegistrationobj.TournamentProfileForm === 1}"> PLAYER DETAILS </a>
+            <a (click)="contacts(2)"  [ngClass]="{'active':playersRegistrationobj.TournamentProfileForm === 2}">CONTACT</a>
+              <a  (click)="membershipRatingInformation(3)" [ngClass]="{'active':playersRegistrationobj.TournamentProfileForm === 3}"> MEMBERSHIP AND RATING INFORMATION</a>
+         </div>
+    </div>
+    <!--public Profile opstionse-->
+       <div class="breadcrumb flat  steppdiv"  *ngIf="playersRegistrationobj.publicProfile">
+            <a  (click)="publicProfileopstions(1)" [ngClass]="{'active':playersRegistrationobj.publicProfileForm === 1}">  PUBLIC PROFILE 1 </a>
+            <a (click)="publicProfileopstions(2)"  [ngClass]="{'active':playersRegistrationobj.publicProfileForm === 2}">PUBLIC PROFILE 2</a>
+            <a (click)="publicProfileopstions(3)" [ngClass]="{'active':playersRegistrationobj.publicProfileForm === 3}"> PHOTOS</a>
+             
+         </div>
+
+  <div>
+   
+    
+    <div class="row">
+        <div class="col-md-3" *ngIf="playersRegistrationobj.TournamentProfileForm !== 0">
+          <p class="h5 one-h5">PLAYER PROFILE INFORMATION</p>
+            <button type="button" class="btn  btn-lg btn-block leftbtns" [ngClass]="{'myactive':playersRegistrationobj.TournamentProfile}" >TOURNAMENT PROFILE</button>
+            <!--<button *ngIf="playersRegistrationobj.TournamentProfileForm !==5" type="button" class="btn  btn-lg btn-block leftbtns myactive" (click)="TournamentProfile()" >TOURNAMENT PROFILE</button>-->
+            <button  type="button" class="btn  btn-lg btn-block leftbtns" [ngClass]="{'myactive':playersRegistrationobj.publicProfile}" > PUBLIC PROFILE</button>
+             <!--<button *ngIf="playersRegistrationobj.TournamentProfileForm ===5" type="button" class="btn  btn-lg btn-block leftbtns myactive" (click)="publicProfile()" > PUBLIC PROFILE</button>-->
+        </div>
+   
+        <div class="col-md-6"   *ngIf="playersRegistrationobj.TournamentProfile">
+           <div>
+      <p class="playerinfoo" *ngIf="playersRegistrationobj.TournamentProfile">The information provided will be used only for tournaments that are used by this site. It will not be made public or shared in any way.</p>
+     
+    </div>
+                  <div >
+        
+                 <!--player rigistrastion form 1-->
+                <div class="container-fluid onetwo">
+                    <div class="div-one" *ngIf="playersRegistrationobj.TournamentProfileForm===1" >
+                      <!--<div>
+                        <p class="player-dtl">PLAYER DETAILS :</p>
+                      </div>-->
+                        <div class="row common-cls">
+                          <label for="first_name" class="col-md-3 col-form-label mr-2">First Name</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" placeholder="First Name" [(ngModel)]="TournamentFormObj.FirstName">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Last Name</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" placeholder="Last Name" [(ngModel)]="TournamentFormObj.LastName">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Email</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" placeholder="email" [(ngModel)]="TournamentFormObj.email">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">User Name</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" placeholder="User Name" [(ngModel)]="TournamentFormObj.UserName">
+                          </div>
+                        </div>
+                        
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Password</label>
+                          <div class="col-xs-9">
+                                <input type="Password" class="form-control myfavinput" placeholder="Password" [(ngModel)]="TournamentFormObj.password">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Confirm Password</label>
+                          <div class="col-xs-9">
+                                <input type="Password" class="form-control myfavinput" placeholder="Confirm Password" [(ngModel)]="TournamentFormObj.Confarmpassword">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Gender</label>
+                         <select class="maindropdown2" [(ngModel)]="TournamentFormObj.Gender">
+                             <option selected disabled>Select Gender</option>
+                              <option  value="Male">Male</option>
+                              <option  value="Female">Female</option>
+                            </select>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">T Shirt Size</label>
+                         <select class="maindropdown2" [(ngModel)]="TournamentFormObj.TShirtSize">
+                             <option selected disabled>Select T Shirt Size</option>
+                              <option  value="Small">Small</option>
+                              <option  value="Medium">Medium</option>
+                              <option  value="Large">Large</option>
+                              <option  value="XL">XL</option>
+                              <option  value="XXl">XXL</option>
+                            </select>
+                        </div>
+                        <div class="row myclass-div">
+                          <label for="last_name" class="col-md-3 col-form-label ">Date Of Birth</label>
+                          <select class="maindropdown" [(ngModel)]="TournamentFormObj.DOBMonth">
+                              <option selected disabled>select Month</option>
+                              <option value="January">January</option>
+                              <option value="February">February</option>
+                              <option value="March">March</option>
+                              <option value="April">April</option>
+                              <option value="May">May</option>
+                              <option value="June">June</option>
+                              <option value="July">July</option>
+                              <option value="August">August</option>
+                              <option value="September">September</option>
+                              <option value="October">October</option>
+                              <option value="November">November</option>
+                              <option value="December">December</option>
+                            </select>
+                              <select class="maindropdown" [(ngModel)]="TournamentFormObj.DOBDate">
+                              <option selected disabled>select Date</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            </select>
+                              <select class="maindropdown" [(ngModel)]="TournamentFormObj.DOBYear">
+                                <option selected disabled>select Year</option>
+                                <option *ngFor="let year of getYear()" getYear value={{year}}>{{year}}</option>
+                            </select>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Plays</label>
+                         <select class="maindropdown2" [(ngModel)]="TournamentFormObj.Plays">
+                             <option selected disabled>Select Plays</option>
+                              <option  value="Right handed">Right handed</option>
+                              <option  value="Left handed">Left handed</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!--player rigistrastion form 2-->
+                    <div class="div-two" *ngIf="playersRegistrationobj.TournamentProfileForm===2"> 
+                             <!--<div>
+                        <p class="player-dtl2">ADDRESS DETAILS :</p>
+                      </div>-->
+                        <div class="row common-cls">
+                          <label for="first_name" class="col-md-3 col-form-label mr-2">Address Line1</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Address1" placeholder="Address Line1" >
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Address line2</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Address2" placeholder="Address Line2">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">City</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.City" placeholder="City">
+                          </div>
+                        </div>
+                        <div class="row myclass-div">
+                          <label for="last_name" class="col-md-3 col-form-label ">State</label>
+                          <select class="maindropdown2" [(ngModel)]="TournamentFormObj.State">
+                             <option selected disabled>select State</option>
+                              <option  value="California">California</option>
+                              <option  value="Hawaii">Hawaii</option>
+                              <option  value="Florida">Florida</option>
+                              <option  value="Texas">Texas</option>
+                              <option  value="Massachusetts">Massachusetts</option>
+                              <option  value="Alaska">Alaska</option>
+                              <option  value="Alabama">Alabama</option>
+                              <option  value="Georgia">Georgia</option>
+                              <option  value="Minnesota">Minnesota</option>
+                              <option  value="North Carolina">North Carolina</option>
+                              <option  value="Pennsylvania">Pennsylvania</option>
+                            </select>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-3 col-form-label mr-2">Postal Code</label>
+                          <div class="col-xs-9">
+                                <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.PostalCode" placeholder="Postal Code">
+                          </div>
+                        </div>
+                        <div class="row myclass-div">
+                          <label for="last_name" class="col-md-3 col-form-label ">Country</label>
+                          <select class="maindropdown2" [(ngModel)]="TournamentFormObj.Country">
+                              <option selected disabled>select Country</option>
+                              <option  value="USA">USA</option>
+                            </select>
+                        </div>
+
+                        <div class="row common-cls">
+                          <label for="first_name" class="col-md-5 col-form-label mr-2">Phone number</label>
+                          <div class="col-xs-9">
+                              <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Phone" placeholder="Phone number">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-5 col-form-label mr-2">Emergency Contact Name</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.EmergencyContactName" placeholder="Emergency Contact Name">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-5 col-form-label mr-2">Emergency Contact Number</label>
+                          <div class="col-xs-9">
+                                <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.EmergencyContact" placeholder="Emergency Contact Number">
+                          </div>
+                        </div>
+                    </div>
+
+                    <!--player rigistrastion form 3-->
+                    <!--<div class="div-three" *ngIf="playersRegistrationobj.TournamentProfileForm===3">
+                          
+                        <div class="row common-cls">
+                          <label for="first_name" class="col-md-5 col-form-label mr-2">Phone number</label>
+                          <div class="col-xs-9">
+                              <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Phone" placeholder="Phone number">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-5 col-form-label mr-2">Emergency Contact Name</label>
+                          <div class="col-xs-9">
+                                <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.EmergencyContactName" placeholder="Emergency Contact Name">
+                          </div>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-5 col-form-label mr-2">Emergency Contact Number</label>
+                          <div class="col-xs-9">
+                                <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.EmergencyContact" placeholder="Emergency Contact Number">
+                          </div>
+                        </div>
+                    </div>-->
+
+                    <!--player rigistrastion form 3-->
+                      <div class="div-four" *ngIf="playersRegistrationobj.TournamentProfileForm===3"> 
+                             <!--<div>
+                        <p class="player-dtl4">MEMBERSHIP AND RATING INFORMATION :</p>
+                      </div>-->
+                        <div class="row common-cls">
+                          <label for="first_name" class="col-md-5 col-form-label mr-2">Club</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Club" placeholder="Club Name">
+                          </div>
+                        </div>          
+                        <div class="row myclass-div">
+                          <label for="last_name" class="col-md-5 col-form-label "> Singles Skill Level</label>
+                          <select class="maindropdown2skill" [(ngModel)]="TournamentFormObj.SinglesSkillLevel">
+                              <option selected disabled>select Skill Level</option>
+                              <option  value="N/A">N/A</option>
+                              <option  value="3.0">3.0</option>
+                              <option  value="3.5">3.5</option>
+                              <option  value="4.0">4.0</option>
+                              <option  value="4.5">4.5</option>
+                              <option  value="5.0">5.0</option>
+                            </select>
+                        </div>
+                        <div class="row myclass-div">
+                          <label for="last_name" class="col-md-5 col-form-label "> Doubles Skill Level</label>
+                          <select class="maindropdown2skill" [(ngModel)]="TournamentFormObj.DoublesSkillLevel">
+                              <option selected disabled>select Skill Level</option>
+                              <option  value="N/A">N/A</option>
+                              <option  value="3.0">3.0</option>
+                              <option  value="3.5">3.5</option>
+                              <option  value="4.0">4.0</option>
+                              <option  value="4.5">4.5</option>
+                              <option  value="5.0">5.0</option>
+                            </select>
+                        </div>
+                            <div class="row myclass-div">
+                          <label for="last_name" class="col-md-5 col-form-label ">Skill rating by</label>
+                          <select class="maindropdown2skill" [(ngModel)]="TournamentFormObj.SkillRatingBy">
+                                <option selected disabled>select Skill Rating</option>
+                                <option  value="1.0">1.0</option>
+                                <option  value="1.5">1.5</option>
+                                <option  value="2.0">2.0</option>
+                                <option  value="2.5">2.5</option>
+                                <option  value="3.0">3.0</option>
+                                <option  value="3.5">3.5</option>
+                                <option  value="4.0">4.0</option>
+                                <option  value="4.5">4.5</option>
+                                <option  value="5.0">5.0</option>
+                            </select>
+                        </div>
+                        <div class="row common-cls">
+                          <label for="last_name" class="col-md-5 col-form-label mr-2">USAPA Member Number</label>
+                          <div class="col-xs-9">
+                                <input type="number" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.USAPAMemberNumber" placeholder="USAPA Member Number">
+                          </div>
+                        </div>
+                   
+                    </div>
+
+
+                
+
+                  
+                 </div>
+        </div>
+        </div>
+        <!--PUBLIC PROFILE div-->
+        <div class="col-md-9" *ngIf="playersRegistrationobj.publicProfile">
+           <p class="playerinfoo" *ngIf="playersRegistrationobj.publicProfile">The information provided will be used to share with the public and will be updated/maintained by you. This will allow you the ability to share photos, pickleball information and stats on your play. This will be like other sport bios and as this site grows, we will add more tabs. </p>
+                      <!--player rigistrastion form 1-->
+                    <div class="row">
+                           <div  class="col-md-3" *ngIf="playersRegistrationobj.publicProfileForm===1">
+                             <div class="common-clspublic">
+                            <label class="uploader" >
+                          <img class="player-img" src="assets/icon/player.png">
+                          <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+                          </label>
+                            </div>
+                             <!--<div class="userprofile">
+                                 <img class="userpic" src="assets/icon/man-user.svg">
+                                 <label class="uploader" >
+                          <img class="userpic" src="assets/icon/player.png">
+                          <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+                          </label>
+                             </div>-->
+                           </div>
+                           <!--<div class="common-clspublic">
+                            <label class="uploader" >
+                          <img class="player-img" src="assets/icon/player.png">
+                          <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+                          </label>
+                            </div>-->
+                       
+              <div class="container-fluid onetwothree col-md-9" *ngIf="playersRegistrationobj.publicProfileForm===1">
+                          <!--<div class="div-one">
+                            <div>
+                              <p class="player-dtl">PUBLIC PROFILE :</p>
+                            </div>
+                          </div>-->
+            
+                  <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Hometown</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Hometown" placeholder="Hometown">
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Swings</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Swings" placeholder="Swings">
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Home club</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.HomeClub" placeholder="Home club">
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Indoor/OutdoorPreference</label>
+                          <div class="col-xs-9">
+                              <input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.IndoorOutdoorPreference" placeholder="Preference">
+                          </div>
+                        </div> 
+                        
+               </div>
+
+               <!--public Profile from 2-->
+               <div class="container-fluid onetwothree col-md-9" *ngIf="playersRegistrationobj.publicProfileForm===2">
+                          <div class="div-one">
+                            <div>
+                              <p class="player-dtl">PUBLIC PROFILE :</p>
+                            </div>
+                          </div>
+                  <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Favorite Paddle</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.FavoritePaddle" placeholder="Favorite Paddle">
+                              </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">How long have you been playing</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.BeenPlaying" placeholder="Playing Experience">
+                              </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Favorite facility/Location to play</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.FavoriteFacility" placeholder="Location to play">
+                                </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Furthest location/Tournament you have traveled to play</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.FurthestLocation" placeholder="Traveled to play">
+                              </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Wins that you are most proud of</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.MostProud" placeholder="Proud of win">
+                                </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Singles/Doubles preference</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.SinglesDoubles" placeholder="Singles/Doubles preference">
+                              </textarea>
+                          </div>
+                        </div> 
+                        <div class="row common-clspublic">
+                          <label for="first_name" class="col-md-6 col-form-label mr-2">Misc information to know</label>
+                          <div class="col-xs-9">
+                              <textarea type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.MiscInformation" placeholder="Misc information">
+                              </textarea>
+                          </div>
+                        </div>
+                        
+               </div>
+               <!--public Profile from 3-->
+               <div class="container-fluid onetwothree col-md-9" *ngIf="playersRegistrationobj.publicProfileForm===3">
+                          <div class="div-one">
+                            <!--<div>
+                              <p class="player-dtl">PUBLIC PROFILE :</p>
+                            </div>-->
+                            <!--<div class="common-clspublic">
+                            <label class="uploader" >
+                          <img class="player-img" src="assets/icon/player.png">
+                          <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+                          </label>
+                            </div>-->
+                            <div class="common-clspublic">
+                            <label class="uploader" >
+                          <img class="player-img" src="assets/icon/player.png">
+                          <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+                          </label>
+                            </div>
+                          </div>
+                        
+               </div>
+            </div>
+        </div>
+                
+    </div>
+        <!--TournamentProfile save and back and cancle buttons div -->
+                      <div class="row mybtnsub" *ngIf="playersRegistrationobj.TournamentProfile">
+                          <div *ngIf="playersRegistrationobj.TournamentProfileForm>1">
+                              <button  class="btn btn-default submitbtns" (click)="playerRgistrationFormBack(playersRegistrationobj.TournamentProfileForm)">Back</button>
+                          </div>
+                          <div *ngIf="playersRegistrationobj.TournamentProfileForm!==3">
+                              <button  class="btn btn-default submitbtns" (click)="playerRgistrationFormNext(playersRegistrationobj.TournamentProfileForm)">Next</button>
+                          </div>
+                           <div *ngIf="playersRegistrationobj.TournamentProfileForm===3" >
+                              <button class="btn btn-default submitbtns" (click)="tournamentProfilesubmit()">Save</button>
+                          </div>
+                          <div >
+                              <button  class="btn btn-default submitbtns">Cancel</button>
+                          </div>
+                        </div>
+    <!--public Profile save and back and cancle buttons div -->
+                      <div class="row mybtnsub" *ngIf="playersRegistrationobj.publicProfile">
+                          <div *ngIf="playersRegistrationobj.publicProfileForm>1">
+                              <button  class="btn btn-default submitbtns" (click)="publicProfileFormBack()">Back</button>
+                          </div>
+                          <!--<div *ngIf="playersRegistrationobj.TournamentProfileForm!==2">
+                              <button  class="btn btn-default submitbtns" (click)="publicProfileFormNext(playersRegistrationobj.publicProfileForm)">Next</button>
+                          </div>-->
+                           <div>
+                              <button  class="btn btn-default submitbtns" (click) ="publicProfilesubmit()">Save</button>
+                          </div>
+                          <div *ngIf="playersRegistrationobj.publicProfileForm!=3">
+                              <button (click)="publicProfileFormSkip()"  class="btn btn-default submitbtns">Next</button>
+                          </div>
+                        </div>
+  </div>       
+
+      <!--after player signup  -->
+      <div class="col-md-12 successfull"  *ngIf="playersRegistrationobj.TournamentProfileForm === 0">
+        <div class="container-fluid onetwothree col-md-9 onee">
+          <h1 style="text-align: center;font-size: 22px;">Player successfully signup ...! <i class="fa fa-smile-o" aria-hidden="true"></i></h1>
+        </div>
+      </div>
+ 
+                        <div class="footerstyles text-center">
+      <div class="row abcded">
+        <div class="col-md-5 col-lg-5 addheight">
+                <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div>
+         <div class="footerheading col-md-2 col-lg-2">PICKLEBALL</div>
+           <div class="col-md-5 col-lg-5">
+            <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div> 
+     </div>
+ 
+  </div> 
+</div>
+

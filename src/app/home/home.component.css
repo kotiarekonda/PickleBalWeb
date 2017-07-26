@@ -1,0 +1,19 @@
+.mainhomediv{
+    height: 100%;
+}
+.homerow{
+    margin-right:0;
+     margin-left: 0px; 
+     padding-left:5%;
+     padding-right: 6%;
+   background-color: #fff;
+    height: 100%;
+}
+.heading{
+    color:#1e6c94;
+}
+.content{
+    margin-top: 22px;
+    font-family:"cambria";
+}
+

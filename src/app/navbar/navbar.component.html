@@ -1,0 +1,70 @@
+<nav class="navbordercolor navbar navbar-default">
+  <div class="col-md-offset-2">
+
+    <button (click)="home()" class="navbarbuttons homebutton" [routerLink]="['/']" [ngClass]="{'myactive':navbarobj.buttons === 1,'btmcenterdv15':navbarobj.buttons !== 1}">
+          <img src="assets/icon/home.svg" />
+    </button>
+    <button (click)="TOURNAMENTS()" class="navbarbuttons tournamentsbutton" [routerLink]="['/TOURNAMENTS']" [ngClass]="{'myactive':navbarobj.buttons === 2,'btmcenterdv15':navbarobj.buttons !== 2}">
+          <b class="mibtn">TOURNAMENTS</b>
+    </button>
+    <!--<button class="navbarbuttons" >
+        <b>PLAYERS</b>
+    </button>-->
+    <div class="dropdown navbarbuttons">
+  <button (click)="player()" class="dropbtn" [ngClass]="{'myactive':navbarobj.buttons === 3,'btmcenterdv15':navbarobj.buttons !== 3}"><b class="mibtn">PLAYERS</b></button>
+  <div class="dropdown-content">
+    <a data-toggle="modal" data-target="#myModal" (click)="SignInModel()">Sign In</a>
+    <a (click)="player()" [routerLink]="['/playerRegistration']">Sign Up</a>
+    <a (click)="player()" href="#">Profile LookUp</a>
+  </div>
+</div>
+    <button  (click)="CLUBS()"  class="navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 4,'btmcenterdv15':navbarobj.buttons !== 4}">
+          <b class="mibtn">CLUBS</b>
+    </button>
+    <button (click)="SHOPPING()" class="navbarbuttons" [ngClass]="{'myactive':navbarobj.buttons === 5,'btmcenterdv15':navbarobj.buttons !== 5}">
+          <b class="mibtn">SHOPPING</b>
+    </button>
+    <button (click)="CLINICS()" class="navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 6,'btmcenterdv15':navbarobj.buttons !== 6}">
+          <b class="mibtn">CLINICS&TRAININGS</b>
+    </button>
+    <!--<button *ngIf="navbarobj.token!==undefined" (click)="LogOut()" class="navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 6,'btmcenterdv15':navbarobj.buttons !== 6}">
+          <b class="mibtn">LogOut</b>
+    </button>-->
+  </div>
+  <!--<div *ngIf="navbarobj.naresh" class="model"></div>-->
+</nav>
+
+<div *ngIf="navbarobj.SignInModel" class="container">
+  <!--<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal"> Modal</button>-->
+
+  <div  class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="mycolor">Sign In</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <p id="profile-name" class="profile-name-card"></p>
+            <div class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="email"  [(ngModel)]="navbarobj.UserName" class="form-control" placeholder="User Name" required autofocus>
+                <input type="password"  [(ngModel)]="navbarobj.password" class="form-control" placeholder="Password" required>
+                <!--<div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>-->
+                <button class="btn btn-lg btn-primary btn-block btn-signin" data-toggle="modal" data-target="#myModal" (click)="signIn()" type="submit">Sign in</button>
+            </div>
+            <!--<a href="#" class="forgot-password">
+                Forgot the password?
+       </a>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--[routerLink]="['/playerRegistration']"-->
