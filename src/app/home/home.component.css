@@ -7,7 +7,7 @@
      padding-left:5%;
      padding-right: 6%;
    background-color: #fff;
-    height: 100%;
+     min-height: calc(81vh);
 }
 .heading{
     color:#1e6c94;
@@ -15,5 +15,25 @@
 .content{
     margin-top: 22px;
     font-family:"cambria";
+}
+.contentt{
+    min-width:450px;
+    padding:33px 5%;
+}
+@media (min-width:300px) and (max-width:480px){
+    .contentt{
+    min-width:300px;
+    padding:10px 0%;
+}
+.content{
+    margin-top: 10px;
+    font-family:"cambria";
+    font-size: 13px;
+}
+.heading{
+    color:#1e6c94;
+      font-size: 13px;
+}
+
 }
 

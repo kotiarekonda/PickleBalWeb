@@ -2,8 +2,10 @@
     padding:0 2%;
     background-color: #fafafa;
     padding-top: 10px;
-      min-height: 100vh;
-    max-height: 100vh;
+      /*min-height: 100vh;
+    max-height: 100vh;*/
+    /*min-height: 82vh;*/
+    
     
 }
 .container-fluid{
@@ -37,51 +39,79 @@
     margin: 5px;
 }
 .maindropdown{
-    margin: 0 7px 0 3px;
-        height: 27px;
-    width: 20%;
-    max-width: 20%;
+    margin: 0 2px 0 0px;
+     height: 28px;
+    width: 82px;
+    /*max-width: 20%;*/
     border-radius: 3px;
     font-size: 12px;
+     color: #636c88;
 }
 .maindropdown2{
-    margin: 0 7px 0 3px;
-        height: 27px;
-    width: 43%;
-    max-width: 45%;
+    margin: 0 7px 0 0px;
+       height: 33px;
+     width: 250px;
+    /*max-width: 45%;*/
     border-radius: 3px;
      font-size: 12px;
+      color: #636c88;
+}
+.maindropdownfirst{
+    margin: 0 7px 0 0px;
+    height: 33px;
+     width: 250px;
+    /*max-width: 55%;*/
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
 }
 .maindropdown2skill {
     margin: 0 7px 0 0px;
-    height: 27px;
-    width: 42%;
-    max-width: 45%;
+    height: 33px;
+     width: 250px;
+    /*max-width: 45%;*/
     border-radius: 3px;
     font-size: 12px;
+     color: #636c88;
 }
-.myclass-div{
-    padding-left:21px;
+.myclass-divdatepick{
+        margin: 7px 0;
+    padding-left: 8px;
+}
+.picker-label{
+        margin-top: 10px;
+}
+.showerrormsgP{
+    margin: 0px;
+       font-size: 10px;
+           margin: 6px 0;
+    color: red;
+}
+.paddclass{
+        padding-left: 10px;
 }
 .submitbtns{
-        width: 95px;
-    padding: 3px !important;
-    margin: 10px;
+      width: 95px;
+    padding: 0px !important;
+    margin: 0 10px;
     background-color: #d9d9d9;
-        font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
     cursor: pointer;
+    height: 30px;
+    line-height: 10px;
     
 }
 .leftbtns{
-    padding: 12px;
-    font-size: 14px;
+        padding: 2px;
+    font-size: 13px;
     font-weight: 600;
     width: 87%;
-    margin-left:7%;
-    background-color:#d3d3d3;
+    margin-left: 7%;
+    background-color: #d3d3d3;
     font-family: inherit;
-     cursor: pointer;
+    cursor: pointer;
+        border-radius: 5px;
     
 }
 .leftbtns:hover{
@@ -156,7 +186,12 @@
 .myfavinput{
     height: 33px;
     font-size: 12px;
-    width: 225px;
+    width: 250px;
+}
+.myfavinput1{
+    /*height: 33px;*/
+    font-size: 12px;
+    /*width: 250px;*/
 }
 .mybtnsub{
     padding-left: 38%;
@@ -348,13 +383,283 @@
     background-color: black;
     text-align: center;
     font-size: 13px;
-    position: absolute;
-    bottom: 0px;
+    /*position: absolute;
+    bottom: 0px;*/
     
 }
 .playerinfoo{
         font-size: 12px;
     font-weight: 400;
     color: #4f4f4f;
-    padding-left: 6%;
+    padding-left: 4%;
+}
+@media (min-width:480px) and (max-width:768px){
+    .mahi {
+    position: relative;
+    display: inline-block;
+    left: -100px !important;
+    border-left: 1px solid lightgray;
+    padding-left: 2px;
+}
+}
+@media (min-width:769px) and (max-width:1200px){
+    .mahi {
+    position: relative;
+    display: inline-block;
+    left: -170px !important;
+    border-left: 1px solid lightgray;
+    padding-left: 2px;
+}
+}
+@media (min-width:768px) and (max-width:1200px){
+       rightdiv {
+    position: absolute;
+    right: 17px;
+    padding-top: 10px;
+    cursor: pointer;
+    width: 71% !important;
+}
+}
+@media (min-width:768px) and (max-width:1200px){
+  
+  .leftbtns{
+    padding: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    width: 87%;
+    margin-left:7%;
+    background-color:#d3d3d3;
+    font-family: inherit;
+     cursor: pointer;
+    
+}
+.myactive{
+    background-color: #3c8fb0;
+    color: #fff;
+     cursor: pointer;
+}
+
+}
+.player-img{
+     width: 165px;
+    border: 1px solid lightgrey;
+    height: 180px;
+
+}
+.textlabel{
+    margin-top: 11px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #3c8fb0;
+}
+.star{
+    color:red;
+}
+.textcount{
+    margin: 0px;
+    font-size: 10px;
+    /* top: 22px; */
+    float: right;
+    padding-right: 15px;
+    font-weight: 500;
+}
+.mobilevw{
+    display: none;
+}
+.webview{
+      display: inline-block;
+}
+.maindropdownfirst :focus {
+    outline:none;
+}
+.maindropdown2:focus {
+    outline:none;
+}
+.maindropdown2skill :focus {
+    outline:none;
+}
+select, select[size="0"], select[size="1"] {
+    border-radius: 0px;
+    border-color: none !important;
+}
+
+@media (min-width:300px) and (max-width:480px){
+    .mobilevw{
+         display: inline-block; 
+    }
+    .webview{
+           display: none;
+}
+.one-h5{
+       display:none;
+}
+ .steppdiv{
+        margin-left: 1%;
+        width: 97%;
+ }
+ .mybtnsub {
+    padding-left: 30%;
+    margin-top: 20px;
+    margin-bottom: 85px;
+    width: 100%;
+}
+.myfavinput{
+    height: 33px;
+    font-size: 12px;
+     width:97%;
+    margin-left: 14px;
+}
+.maindropdownfirst{
+    margin: 0 7px 0 0px;
+    height: 33px;
+      width:88%;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+    margin-left: 14px;
+}
+.playerinfoo{
+    font-size: 12px;
+    font-weight: 400;
+    color: #4f4f4f;
+    padding-left: 8%;
+    margin-top: 10px;
+}
+.maindropdown2{
+    margin: 0 7px 0 14px;
+    height: 33px;
+      width:88%;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+}
+.submitbtns{
+    width: 65px;
+    min-width: 27px;
+    padding: 0px !important;
+    margin: 0 10px;
+    background-color: #d9d9d9;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+    line-height: 10px;
+}
+.maindropdown2skill {
+    margin: 0 7px 0 14px;
+    height: 33px;
+    width:88%;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+
+}
+.playerinfoo {
+  
+    padding-right: 8px;
+}
+.uploader{
+    width:100%;
+}
+.player-img{
+    width: 100%;
+}
+.mobilecut{
+    overflow-y: hidden;
+    /* width: 172px; */
+    max-width: 152px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+.marggg{
+    margin: 0px;
+}
+.mobilemahi{
+    width:98%;
+    padding: 0px;
+}
+.mbl-input{
+    width:90%;
+}
+.breadcrumb a{
+    font-size: 8px;
+}
+/*.mobilehide{
+    display: none;
+}*/
+} 
+.infoicon{
+    height: 13px;
+    width: 17px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 2px;
+    padding: 1px;
+}
+
+/*.infodiv{
+   display: none;
+}
+.mahi{
+    cursor: pointer;
+}
+.mahi:hover .infodiv{
+   display: block;
+   width:120px;
+   height:50px;
+   position: absolute;
+}*/
+
+.mahi {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+        left: -214px;
+    border-left: 1px solid lightgray;
+    padding-left: 2px;
+}
+
+.mahi .infodiv {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+        top: 115%;
+    left: -21%;
+    margin-left: -60px;
+}
+
+.mahi .infodiv::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.mahi:hover .infodiv {
+    visibility: visible;
+}
+.password-info{
+           width: 255px;
+    word-break: break-all;
+    left: 26%;
+    padding: 6px;
+    position: relative;
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+.padclasss{
+    padding-left:0px;
 }

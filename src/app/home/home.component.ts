@@ -15,7 +15,6 @@ export class HomeComponent{
 
   ngOnInit() {
     let token=this.storage.get('Player-Token');
-    console.log(">>>>>>>>>>>>>>>>>>>>>>",token);
       if(token!==null){
         this.router.navigate(['/playerHomePage']);
       }

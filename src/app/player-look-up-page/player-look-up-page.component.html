@@ -1,0 +1,93 @@
+<div class="container-fluid lookupone">
+
+  <div class="row  sub-div" >
+    <p class="allplysrs">ALL PLAYERS</p>
+    <div class="row rightdiv">
+       <p class="filter-by">Filter  by  :</p>
+       <p class="apple" (click)="searchByGeder('Male')">MALE</p>
+       <p class="apple">|</p>
+       <p class="apple" (click)="searchByGeder('Female')">FEMALE</p>
+       <p class="apple">|</p>
+       <!--<p class="apple">RANK</p>-->
+      
+                <!--<label for="last_name" class="col-md-3 col-xs-3 col-form-label mr-2">Gender <span class="star">*</span></label>-->
+                <select class="mahidrop" [(ngModel)]="PlayerLookUpobj.rank" (ngModelChange) = "rankSelection()">
+                             <option selected disabled>RANK</option>
+                              <option  value="N/A">N/A</option>
+                              <option  value="3.0">3.0</option>
+                              <option  value="3.5">3.5</option>
+                              <option  value="4.0">4.0</option>
+                              <option  value="4.5">4.5</option>
+                              <option  value="5.0">5.0</option>
+                            </select>
+                          
+                 <div class="input-group stylish-input-group">
+                    <input  autofocus type="text" (keyup)="searchByText()" [(ngModel)]="PlayerLookUpobj.SearchText" class="form-control usersearch"  placeholder="Search"  autocomplete="off" spellcheck="false" autocorrect="off" tabindex="1" >
+                    <button class="stylish-input-group clearbutton" (click)="clearSearch()">Clear</button>
+                        <div class="mahi">
+                 <img class="infoicon" src="assets/icon/infoicon.svg">
+                   <!--<div>-->
+                  <p  class="infodiv" style="font-size: 11px;"> Search can be done with FirstName/LastName/City/State/Country</p>
+                   <!--</div>-->
+              </div>
+                    <!--<span class="input-group-addon">
+                        <button type="submit">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                    </span>-->
+                </div>
+    </div>
+  </div>
+<div class="filter-name"> 
+   
+          <ul class="playerleters">         
+              <li  *ngFor="let letter of PlayerLookUpobj.letters" (click)="searchByLetters(letter)">
+                <span>{{letter}}</span>
+              </li>
+            </ul>
+        </div>
+        <div style="padding:0px 25px;padding-bottom: 3%;">
+          <!-- <h1 class="select-leter">{{PlayerLookUpobj.SlectLetter}}</h1> -->
+          <div *ngIf="PlayerLookUpobj.showPlayerData===0">
+            <h1 class="no-found">{{PlayerLookUpobj.playersList}}</h1>
+          </div>
+          <div *ngIf="PlayerLookUpobj.showPlayerData===1 && PlayerLookUpobj.searchText === false">
+          <md-list>
+            <!--mat-elevation-z1-->
+            <md-list-item *ngFor="let player of PlayerLookUpobj.playersList" class="player-list">
+                   <!--<img class="player-img" src="assets/icon/player.png">-->
+                   <p class="mahesh" (click)="viewPlayerDetailse(player)"><span class="username">{{player.LastName}}</span><span class="username">{{player.FirstName}}</span></p> 
+               </md-list-item>
+            </md-list>
+          </div>
+          <div *ngIf="PlayerLookUpobj.showPlayerData===1 && PlayerLookUpobj.searchText === true">
+          <md-list>
+            <!--mat-elevation-z1-->
+            <md-list-item *ngFor="let player of PlayerLookUpobj.playersList" class="player-list">
+                   <!--<img class="player-img" src="assets/icon/player.png">-->
+                   <p class="mahesh" (click)="viewPlayerDetailse(player)"><span class="username">{{player.LastName}}</span><span class="username">{{player.FirstName}}</span></p> 
+                   <p>-</p>
+                   <p class="mahesh"><span >{{player.City}}</span></p>
+                    <p>-</p>
+                   <p class="mahesh"><span >{{player.State}}</span></p>
+                    <p>-</p>
+                   <p class="mahesh"><span >{{player.Country}}</span></p>
+               </md-list-item>
+            </md-list>
+          </div>
+        </div>
+    
+  </div>
+
+  <div class="footerstyles text-center">
+    <div class="row abcded">
+        <div class="col-md-4 col-lg-4 addheight">
+                <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div>
+         <div class="footerheading col-md-4 col-lg-4">Copyright<span>&#169;</span>World Of Pickleball</div>
+           <div class="col-md-5 col-lg-5">
+            <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div> 
+     </div>
+</div>
+    

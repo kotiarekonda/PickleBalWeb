@@ -1,0 +1,92 @@
+<div style="overflow: auto !important;width:600px;" *ngIf="login">
+  <div style=" display:flex;">
+    <br>
+    <div id="div-reg1" class="visible-lg visible-md hide-sm hide-xs">
+      <h2 class="mainmahi"><b>New Tournament Directors</b></h2>
+      <div>
+         <img src="assets/icon/Logo.svg" class="logoo"/>
+      </div>
+      <button md-button id="btn-register1" (click)="pbsignup()">Register</button>
+    </div>
+    <!-- login step1-->
+    <div id="div-login1" style="position:relative;">
+      <button id="close-btn2" md-dialog-close>X</button>
+      <h2 class="signcreate"><b>Existing Tournament Directors</b></h2>
+      <form novalidate>
+      <md-input-container class="example-full-width contains" >
+                <input type="text" mdInput placeholder="Email/Phone Number" [(ngModel)]="email" required email name="email">
+              </md-input-container>
+              <md-input-container class="example-full-width contains" >
+                <input type="password" mdInput placeholder="Password" [(ngModel)]="pwd" required email name="email">
+              </md-input-container>
+              <button md-button id="btn-submit1" style="box-shadow:2px 2px 2px lightgrey;    margin-top: 14%;" type="submit">SignIn</button>
+        <!-- {{ f.value }} -->
+      </form>
+    </div>
+  </div>
+</div>
+<div id="signup-dialog" layout-wrap style="position: relative;font-family: 'Avenir LT Std 65 Medium';" *ngIf="signup">
+  <!-- <layout="row" layout-align="end start"> -->
+<md-header style="position: fixed;z-index: 9999;width: 350px;display: block;background-color: #FAFAFA;">
+    <div>
+    <button id="close-btn1" md-dialog-close>X</button>
+  </div>
+  <!--  </layout> -->
+  <br>
+  <h4 style="color: #0288D1;height:10px;"><b>Sign up</b></h4>
+</md-header ><!--You can use md-no-sticky class-->
+<md-content layout-padding layout-wrap id="formdata">
+      <form novalidate #f="ngForm" (ngSubmit)="onSubmit(f)" style="margin-top: 20px;">
+    <md-input-container>
+              <input type="text" mdInput placeholder="First Name" [(ngModel)]="fname" email name="fname">
+            </md-input-container>
+
+            <md-input-container>
+              <input type="text" mdInput placeholder="Last Name" [(ngModel)]="lname" email name="lname">
+            </md-input-container>
+
+            <md-input-container>
+              <input type="email" mdInput placeholder="email" [(ngModel)]="email" email name="email">
+            </md-input-container>
+            <md-input-container>
+              <input type="number" mdInput placeholder="Phone Number" [(ngModel)]="pno" email name="pno">
+            </md-input-container>
+            <md-input-container>
+              <input type="text" mdInput placeholder="User Id" [(ngModel)]="userid" email name="userid">
+            </md-input-container>
+            <md-input-container>
+              <input type="password" mdInput placeholder="Password" [(ngModel)]="Password" email name="Password">
+            </md-input-container>
+             <md-input-container>
+              <input type="password" mdInput placeholder="Confirm Password" [(ngModel)]="cPassword" email name="cPassword">
+            </md-input-container>
+            <md-input-container>
+              <input type="text" mdInput placeholder="Billing Name" [(ngModel)]="bname" required name="bname">
+            </md-input-container>
+            <md-input-container>
+              <textarea mdInput placeholder="Address Area 1"></textarea>
+            </md-input-container>
+             <md-input-container>
+              <textarea mdInput placeholder="Address Area 2"></textarea>
+            </md-input-container>
+            <md-input-container>
+              <input type="text" mdInput placeholder="City" [(ngModel)]="city" email name="city">
+            </md-input-container><md-input-container class="example-full-width">
+              <input mdInput maxlength="5" placeholder="Postal Code">
+            </md-input-container>
+            <md-input-container>
+              <input type="text" mdInput placeholder="Country" [(ngModel)]="country" required name="country">
+            </md-input-container>
+             <md-input-container>
+              <input type="number" mdInput placeholder="Phone Number" [(ngModel)]="pno" email name="pno">
+            </md-input-container>
+            <md-input-container>
+              <input type="email" mdInput placeholder="email" [(ngModel)]="email" email name="email">
+            </md-input-container>
+            <button md-button id="signup-btn1" layout-wrap type="submit">SIGN UP</button>
+  </form>
+  <br>
+  <button md-button id="login-btn1" layout-wrap (click)="openLoginDialog()">LOGIN</button>
+</md-content>
+</div>
+

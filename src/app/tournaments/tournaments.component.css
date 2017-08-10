@@ -2,7 +2,7 @@
     margin: auto;
     top:43%;
     left:39%;
-    position: absolute
+    position: absolute;
 }
 .one{
            color: lightslategray;
@@ -13,4 +13,12 @@
     background-color: #f2f2f2;
     padding: 7%;
     padding-left: 24%;
+}
+@media (min-width:300px) and (max-width:480px){
+    .mytourn{
+    margin: auto;
+    top: 43%;
+    left: 17%;
+    position: absolute;
+}
 }

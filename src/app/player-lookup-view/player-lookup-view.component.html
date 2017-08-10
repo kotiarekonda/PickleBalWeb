@@ -1,0 +1,223 @@
+<div class="container">
+  <!--<button (click)="LogOut()" class="navbarbuttons logout">
+          <b class="mibtn" >LogOut</b>
+    </button>-->
+  <div class="main-page-profile" style="background-image: url(assets/icon/background-player.jpg);">
+    <div class="player-details row">
+      <div></div>
+      <div class="col-md-5 row roadstar"> 
+        <!--<div></div>-->
+
+        <div class="playerimg-info">
+          <label class="uploader">
+            <img *ngIf="playerDetails.ProfilePic" class="player-img" src={{playerDetails.ProfilePic}}>
+           <img *ngIf="playerDetails.ProfilePic===undefined" class="player-img" src="assets/icon/player.png">
+           <!--<img class="player-img" src="assets/icon/player.png">-->
+       <!--<input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>-->
+       </label>
+          <!--<input type="file" [(ngModel)]="upLoadFile">-->
+
+
+        </div>
+        <div class="column mahi">
+          <p class="h4 player-name">{{playerDetails.FirstName}}</p>
+          <p class="h4 player-name1"> {{playerDetails.LastName}}</p>
+        </div>
+      </div>
+      <div (click)="upLoadPlayerImg()" class="col-md-7" style="padding-left:0px;">
+        <div class="row right-div">
+          <div class="main-date">
+            <p class="player-key">HomeTown</p>
+            <p *ngIf="playerDetails.PublicProfile" class="h3 player-value">{{playerDetails.PublicProfile.HomeTown}}</p>
+          </div>
+          <div class="main-place">
+            <p class="player-key">Nationality</p>
+            <p  class="h3 player-value">{{playerDetails.Country}}</p>
+          </div>
+          <div class="main-plays">
+            <p class="player-key">Plays</p>
+            <p *ngIf="playerDetails.PublicProfile1" class="h3 player-value">{{playerDetails.PublicProfile.Swings}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+  <div class="profilename">
+    <p class="h3 profilenameptag">PROFILE</p>
+  </div>
+  <div class="row player-tabs">
+    <!--<button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 1}" (click)="tournmentprofile()">TOURNAMENT PROFILE</button>-->
+    <button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 1}" (click)="publicprofile()">PUBLIC PROFILE</button>
+    <button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 2}" (click)="photos()">PHOTOS</button>
+  </div>
+  <div class="my-ddvp">
+    <!--Player Tournament Profile view div-->
+      
+
+
+
+
+
+
+      <!--player tournament prfile deailse1 edit-->
+      
+
+      <!--player tournament prfile deailse2-->
+      
+      
+      <!--player tournament prfile deailse3-->
+      
+      
+
+    <!--player public profile view and edit div -->
+    <div *ngIf="playerHomePageobj.show===1">
+
+      <!--PUBLIC PROFILE lable and value -->
+      <div  style="padding: 3%;margin-bottom:100px;">
+        <div>
+          <!--<p style="margin-top: 0px;cursor:pointer;float:right;" (click)="editTournamentProfile(4)">
+            <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+          </p>-->
+        </div>
+        <div *ngIf="playerDetails.PublicProfile1===0">
+          <h1 class="empty" >Player Public Profile Is Empty</h1>
+        </div>
+        <div *ngIf="playerDetails.PublicProfile1!==0">
+          <div class="row mypadd-class">
+            <h3 class="quest1">Home Town</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.HomeTown}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Swings</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.Swings}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Home Club</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.HomeClub}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Sponsored Club</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.SponsoredClub}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Indoor/Outdoor/Preference</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.IndoorOutdoorPreference}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Favorite Paddle</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.FavoritePaddle}}</strong></span>
+
+          </div>
+        
+          <div class="row mypadd-class">
+            <h3 class="quest1">How long have you been playing</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.BeenPlaying}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Favorite Facility/location Play</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.FavoriteFacility}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Furthest Location /Tournament you have traveled To Play</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.FurthestLocation}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Wins that you are most proud of</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.MostProud}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Singles/Doubles preference</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.SinglesDoubles}}</strong></span>
+
+          </div>
+          <div class="row mypadd-class">
+            <h3 class="quest1">Misc information to know</h3>
+            <span style="padding-left: 23px;">
+                                                </span>
+            <span class="child-valuee"><strong>{{playerDetails.PublicProfile.MiscInformation}}</strong></span>
+
+          </div>
+          </div>
+
+
+      </div>
+
+      
+      <!--Edit PUBLIC PROFILE values-->
+      
+    </div>
+
+    <!--player photes-->
+    <div *ngIf="playerHomePageobj.show === 2" style="min-height: 350px;">
+      <div class="row" style="margin: 3%;">
+        <div class="row" *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0" >
+        <div *ngFor="let photo of playerDetails.Photos" class="col-md-3" style="padding:6px;">
+          <div class="uploadImd">
+            <label class="uploader">
+                <img class="player-img" src={{photo}}>
+                </label>
+          </div>
+        </div>
+        </div>
+        <div class="row" *ngIf="playerDetails.Photos && playerDetails.Photos.length===0" >
+          <h1> Player Photos Is Empty </h1>
+        <!--<div *ngFor="let photo of playerDetails.Photos" class="col-md-3" style="padding:6px;">
+          <div class="uploadImd">
+            <label class="uploader">
+                <img class="player-img" src={{photo}}>
+                </label>
+          </div>
+        </div>-->
+        </div>
+      </div>
+    </div>
+
+
+
+   
+ <div class="footerstyles text-center">
+    <div class="row abcded">
+        <div class="col-md-4 col-lg-4 addheight">
+                <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div>
+         <div class="footerheading col-md-4 col-lg-4">Copyright<span>&#169;</span>World Of Pickleball</div>
+           <div class="col-md-5 col-lg-5">
+            <img class="addslogo" src="assets/icon/footeradds.svg">
+        </div> 
+     </div>
+</div>
+</div>
