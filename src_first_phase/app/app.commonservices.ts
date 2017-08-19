@@ -4,7 +4,6 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class commonServices {
    path = "http://localhost:9000"; //local point.
-  //path = "http://62.151.179.196:9005";//server point. 
   playerobj: any = {};
   constructor(public http: Http) { }
 
