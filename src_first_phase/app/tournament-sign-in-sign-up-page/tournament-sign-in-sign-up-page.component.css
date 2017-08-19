@@ -1,0 +1,124 @@
+/*/deep/  md-dialog-container.mat-dialog-container{
+    overflow-y: auto !important;
+    width: 100%;
+}*/
+/deep/ md-dialog-container  {
+ padding:0px !important;
+ overflow: visible !important;
+}
+/deep/ .mat-dialog-container{
+ padding:0px !important;
+ overflow: visible !important;
+}
+/*md-dialog-container.mat-dialog-container {
+    width: 100%;
+    padding: 0px;
+    overflow: visible;
+}*/
+
+
+#btn-submit1 {
+    background-color: #03A9F4;
+    color: white;
+    width: 100%;
+    margin: 0px;
+}
+
+#btn-register1 {
+    background-color: #FF4081;
+    color: white;
+    width: 100%;
+        margin: 10px 0px;
+}
+
+
+#close-btn2{
+	
+    border-radius: 15px;
+    border: 0px;
+    position: absolute;
+       top: -15px;
+          right: -15px;
+    font-size: 87%;
+    background-color: #FF4081;
+    width: 30px;
+    height: 30px;
+    color: white;
+}
+#div-reg1{
+	background-color: #1565C0; 
+	width: 42%;
+	padding:11px;
+}
+#div-login1{
+	background-color:#FAFAFA;
+	padding:17px;
+	width: 58%;
+    /*height: 310px;*/
+    height: auto;
+}
+
+
+/*signup css*/
+#formdata{
+  overflow-y: auto !important;
+}
+
+
+#signup-btn1 {
+  background-color: #03A9F4;
+  color: white;
+  width: 100%;
+}
+
+#login-btn1,
+#btn-register1 {
+  background-color: #FF4081;
+  color: white;
+  width: 100%;
+}
+
+#close-btn1 {
+  border-radius: 15px;
+  border: 0px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font-size: 75%;
+  background-color: #FF4081;
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+#signup-dialog {
+  background-color: #FAFAFA;
+  height: 500px;
+      padding: 0px 30px;
+  width: 400px;
+}
+md-input-container{
+    margin:0px;
+    width: 100%;
+}
+.mainmahi{
+        color: white;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 45px;
+}
+.logoo{
+   width: 100%;
+    height: 107px;
+    margin-bottom: 23px;
+}
+.signcreate{
+        text-align: center;
+    font-size: 16px;
+}
+.contains{
+    width: 100%;
+    margin: 0px;
+    padding: 0 7%;
+}
+

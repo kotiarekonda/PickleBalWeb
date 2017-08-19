@@ -1,0 +1,312 @@
+.navbordercolor{
+    border-color:transparent!important;
+    padding-left:18%;
+    padding-top:9px;
+     background-color:#f5f5f5;
+     margin-bottom: 0px;
+}
+.homebutton{
+    width: 80px;
+    margin: 0px !important;
+    /*padding: 4px;*/
+     cursor: pointer;
+}
+.tournamentsbutton{
+    margin:0px;
+     cursor: pointer;
+}
+.navbarbuttons{
+    border: transparent;
+    background-color: transparent;
+    /*margin:0 10px;*/
+    /*padding: 6px;*/
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+     color: black;
+     cursor: pointer;
+         height: 32px;
+    line-height: 7px;
+}
+.navbarbuttons:hover{
+ /*background-color:#ff4081;*/
+     background: -webkit-radial-gradient(center,#7fc5e9,#247197);
+background: -o-radial-gradient(center,#7fc5e9,#247197);
+background: -moz-radial-gradient(center,#7fc5e9,#247197);
+background: radial-gradient(ellipse at center, #7fc5e9, #247197);
+     /*border-radius: 5px;s*/
+ color:#fff;
+}
+.navbar-nav > li.dropdown:hover > a, 
+.navbar-nav > li.dropdown:hover > a:hover,
+.navbar-nav > li.dropdown:hover > a:focus {
+    background-color: rgb(231, 231, 231);
+    color: rgb(85, 85, 85);
+}
+li.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+.namebb{
+    padding:12px;
+}
+.myactive{
+    /*background: linear-gradient(90deg,#5E98B6 , #0E628C );*/
+    border-radius: 5px;
+    color: #fff;
+    background: #7fc5e9;
+background: -webkit-radial-gradient(center,#7fc5e9,#247197);
+background: -o-radial-gradient(center,#7fc5e9,#247197);
+background: -moz-radial-gradient(center,#7fc5e9,#247197);
+background: radial-gradient(ellipse at center, #7fc5e9, #247197);
+}
+.dropbtn {
+    
+    /*padding: 5px;*/
+   font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+        height: 32px;
+    line-height: 7px;
+}
+.logout{
+        width: 8%;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 10;
+    width: 180px;
+}
+.dropdown-content a {
+    color: black;
+    padding:10px;
+    text-decoration: none;
+    display: block;
+    font-size: 12px;
+}
+.dropdown-content a:hover {
+    color: #fff;
+    padding:10px;
+    text-decoration: none;
+    display: block;
+    background-color: #6cc2e5;
+    font-size: 12px;
+    width: 180px;
+    
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.mibtn{
+    padding: 4%;
+}
+.model{
+    width:20%;
+    height:20%;
+    position:fixed;
+    margin-top:20%;
+}
+.card-container.card {
+    max-width: 350px;
+    padding: 40px 40px;
+}
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+.card {
+    background-color: #F7F7F7;
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+.profile-img-card {
+    width: 96px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+}
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+.btn.btn-signin {
+    background-color: rgb(104, 145, 162);
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+.btn.btn-signin:hover,
+.btn.btn-signin:active,
+.btn.btn-signin:focus {
+    background-color: #136ad5;
+}
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+.close{
+    position: absolute;
+    right: 11px;
+}
+.modal-header{
+        padding: 5px 0px 0px 10px;
+}
+.form-control{
+        height: 38px;
+    font-size: 13px;
+}
+.mycolor{
+    color: #2196F3;
+}
+@media (min-width:480px) and (max-width:768px){
+.navbordercolor{
+    border-color: transparent!important;
+    padding-left: 2%;
+    padding-top: 9px;
+    background-color: #f5f5f5;
+}
+}
+@media (min-width:300px) and (max-width:480px){
+   .navbarbuttons{
+    border: transparent;
+    background-color: transparent;
+    font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: black;
+    cursor: pointer;
+    height: 25px;
+    line-height: 22px;
+    padding: 0px;
+    width: 30px;
+    min-width: 12%;
+    margin: 0px;
+}
+.clinics{
+     min-width: 22.5% !important;
+    margin-left: 5px;
+     overflow-y: hidden;
+    /* width: 172px; */
+    max-width: 172px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.mblevlgtd{
+    width: 67px;
+}
+.navbordercolor {
+    border-color: transparent!important;
+    padding-left:0px; 
+    padding-right: 0px;
+    padding-top: 9px;
+    background-color: #f5f5f5;
+}
+.dropbtn {
+    
+    /*padding: 5px;*/
+   font-size: 8px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+        height: 25px;
+    line-height: 7px;
+    padding: 0px;
+         min-width: 40px;
+}
+.homebutton{
+      min-width: 30px !important; 
+      margin: 0px !important;
+    /*padding: 4px;*/
+     cursor: pointer;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+        /*padding-left: 12px;*/
+}
+
+}
+

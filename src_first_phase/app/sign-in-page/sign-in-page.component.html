@@ -1,0 +1,29 @@
+<div style="padding:4px;">
+    <div>
+        <button type="button" class="close" (click)="close()">&times;</button>
+        <h2 md-dialog-title class="mycolor">Sign In</h2>
+    </div>
+
+
+    <md-dialog-content class="dialog-content">
+
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <p id="profile-name" class="profile-name-card"></p>
+        <div class="form-signin">
+            <span id="reauth-email" class="reauth-email"></span>
+            <input type="email" [(ngModel)]="signInobj.UserName" class="form-control" id="username"  placeholder="User Name" required >
+            <input type="password" [(ngModel)]="signInobj.password" class="form-control" placeholder="Password" required (keydown)="PasswordEnter($event)">
+            <p style="font-size:12px;cursor:pointer;text-align:center" (click)="forgotPassword()">Forgot Password?</p>
+            <!--<div id="remember" class="checkbox">
+                    <label>
+                        <input type="checkbox" value="remember-me"> Remember me
+                    </label>
+                </div>-->
+            <p class="erroremsg" *ngIf="signInobj.errore">{{signInobj.errormsg}}</p>
+
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <button class="btn btn-lg btn-primary btn-block btn-signin" (click)="signIn()" type="submit">Sign in</button>
+    </md-dialog-actions>
+</div>

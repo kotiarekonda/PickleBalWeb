@@ -1,0 +1,1136 @@
+<div class="container">
+    <!--<button (click)="LogOut()" class="navbarbuttons logout">
+          <b class="mibtn" >Log Out</b>
+    </button>-->
+
+    <!-- <div class="dropdown ">
+  <button md-button (click)="settings()" class="dropbtn navbarbuttons mibtn" ><b class="mibtn">Settings</b></button>
+  <div class="dropdown-content">
+    <a style="cursor:pointer" (click)="changePassword()">Change Password</a>
+    <a style="cursor:pointer" (click)="LogOut()">LogOut</a>
+  </div>
+</div> -->
+    <div class="main-page-profile" style="background-image: url(assets/icon/background-player.jpg);">
+        <div class="player-details row">
+            <div></div>
+            <div class="col-md-5 row roadstar">
+                <!--<div></div>-->
+
+                <div class="playerimg-info">
+                    <!--<label class="uploader">
+            
+            <img *ngIf="playerDetails.PublicProfile && playerDetails.PublicProfile.ProfilePic!==undefined" class="player-img" src={{playerDetails.PublicProfile.ProfilePic}}>
+           <img *ngIf="playerDetails.PublicProfile===undefined || playerDetails.PublicProfile.ProfilePic===undefined" class="player-img" src="assets/icon/player.png">
+       <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+       </label>-->
+                    <div class="show-pic">
+                        <!--<md-progress-circular></md-progress-circular>-->
+
+                        <md-spinner *ngIf="playerDetails.loadingProfileIcon" class="uploadspinner"></md-spinner>
+                        <img *ngIf="playerDetails.PublicProfile===undefined || playerDetails.PublicProfile.ProfilePic===undefined" class="player-img" src="assets/icon/player.png">
+                        <img *ngIf="playerDetails.PublicProfile && playerDetails.PublicProfile.ProfilePic!==undefined" class="player-img" src={{playerDetails.PublicProfile.ProfilePic}}>
+                        <!--<img  *ngIf="uploadgif" src="assets/icon/uploadgif.svg" class="player-img">-->
+                        <div [hidden]="playerDetails.loadingProfileIcon===true" class="upload-pic">
+
+                            <label class="mahi-label row">
+                 <img src="assets/icon/camera.svg" class="camera-mahi">
+                 <p class="mahi-name">Update Profile Picture</p>
+                 <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event)"/>
+               </label>
+                        </div>
+                        <div style="width:30px;height:20px; margin-top: -212px; margin-left: -66px;" *ngIf="playerHomePageobj.showImage">
+                            <img src="assets/icon/loading.png">
+                        </div>
+                    </div>
+                    <!--<input type="file" [(ngModel)]="upLoadFile">-->
+
+
+                </div>
+                <div class="column main-clsf">
+                    <p class="h4 player-name">{{playerDetails.FirstName}}</p>
+                    <p class="h4 player-name1"> {{playerDetails.LastName}}</p>
+                </div>
+            </div>
+            <div (click)="upLoadPlayerImg()" class="col-md-7" style="padding-left:0px;">
+                <div class="row right-div">
+                    <div class="main-date">
+                        <p class="player-key">Home Town</p>
+                        <p *ngIf='playerDetails.PublicProfile' class="h3 player-value">{{playerDetails.PublicProfile.HomeTown}}</p>
+                    </div>
+                    <div class="main-place">
+                        <p class="player-key">Nationality</p>
+                        <p class="h3 player-value">{{playerDetails.CountryCode}}</p>
+                    </div>
+                    <div class="main-plays">
+                        <p class="player-key">Plays</p>
+                        <p *ngIf='playerDetails.PublicProfile' class="h3 player-value">{{playerDetails.PublicProfile['Swings']}}</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+       <div class="row player-tabs">
+        <button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 1}" (click)="tournmentprofile()">TOURNAMENT PROFILE</button>
+        <button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 2}" (click)="publicprofile()">PUBLIC PROFILE</button>
+        <button type="button" class="btn  btn-lg player-inform" [ngClass]="{'myactive':playerHomePageobj.show === 3}" (click)="photos()">PHOTOS</button>
+    </div>
+    <div class="main-ptl">
+        <!--Player Tournament Profile view div-->
+
+        <div *ngIf="playerHomePageobj.show === 1">
+            <!--player tournament prfile deailse1-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile1===0">
+                <div class="row">
+                    <p class="player-dtl">PLAYER DETAILS :</p>
+                    <p style="margin-top: 30px;cursor:pointer" (click)="editTournamentProfile(1)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">First Name</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.FirstName}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b  class="valueweight">Last Name</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.LastName}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Email</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.email}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">User Name</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.UserName}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Gender</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Gender}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">T-Shirt Size</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.TShirtSize}}</span>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Date Of Birth</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.BirthDate}}</span>
+                </div>
+            </div>
+
+
+
+
+
+
+            <!--player tournament prfile deailse1 edit-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile1===1">
+                <div>
+                    <p class="player-dtl">PLAYER DETAILS :</p>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="first_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">First Name</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.FirstName" required>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control myfavinput" placeholder="First Name" [(ngModel)]="playerHomePageobj.EditTournamentform.FirstName"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Last Name</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.LastName" required>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control myfavinput" placeholder="Last Name" [(ngModel)]="playerHomePageobj.EditTournamentform.LastName"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">User Name</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.UserName" disabled>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control myfavinput" placeholder="User Name" [(ngModel)]="playerHomePageobj.EditTournamentform.UserName"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Email</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput type="email" [(ngModel)]="playerHomePageobj.EditTournamentform.email" disabled>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control myfavinput"  [(ngModel)]="playerHomePageobj.EditTournamentform.email"> -->
+                    </div>
+                </div>
+                <br>
+                <div class="row common-cls">
+                    <label for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Gender</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+
+
+                <!--<md-input-container>
+                <input mdInput placeholder="Select Gender" [mdAutocomplete]="auto"  [(ngModel)]="playerHomePageobj.EditTournamentform.Gender" style="width:38%">
+                </md-input-container>
+
+                <md-autocomplete #auto="mdAutocomplete">
+                 
+                </md-autocomplete>-->
+<select class="maindropdownfirst myselectt" placeholder="Select T Shirt Size"  [(ngModel)]="playerHomePageobj.EditTournamentform.Gender" style="width:38%">
+
+                             <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                        </select>
+
+               <!--  <select class="maindropdownfirst" placeholder="Select Gender" [(ngModel)]="playerHomePageobj.EditTournamentform.Gender" style="width:38%">
+                
+                </select>
+ -->
+
+
+
+                    </div>
+                    <br>
+                </div>
+                <br>
+                <div class="row common-cls">
+                    <label for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">T Shirt Size</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdownfirst myselectt" placeholder="Select T Shirt Size" [(ngModel)]="playerHomePageobj.EditTournamentform.TShirtSize" style="width:38%">
+
+                            <option value="Small">Small</option>
+                            <option value="Medium">Medium</option>
+                            <option value="Large">Large</option>
+                            <option value="XL">XL</option>
+                            <option value="XXl">XXL</option>
+                        </select>
+                    </div>
+                </div>
+                <!--<div class="row common-cls">
+                          <label for="last_name" class="col-md-2 col-form-label mr-2">Password</label>
+                          <div class="col-xs-9">
+                                <input type="Password" class="form-control myfavinput" placeholder="Password" [(ngModel)]="playerHomePageobj.EditTournamentform.password">
+                          </div>
+                        </div>-->
+                <!--<div class="row common-cls">
+                          <label for="last_name" class="col-md-2 col-form-label mr-2">Conform Password</label>
+                          <div class="col-xs-9">
+                                <input type="Password" class="form-control myfavinput" placeholder="Conform Password" [(ngModel)]="playerHomePageobj.EditTournamentform.Confarmpassword">
+                          </div>
+                        </div>-->
+                        <br>
+                
+                <div class="row myclass-div">
+                    <label for="last_name" style="padding-left: -2px;"  class="col-md-2 col-form-label"><b class="valueweight">Date Of Birth</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdown myselectt" placeholder="DD" [(ngModel)]="playerHomePageobj.EditTournamentform.DOBDate" style="width: 10%;">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                        </select>
+                      
+                        <select class="maindropdown myselectt" placeholder="MM" [(ngModel)]="playerHomePageobj.EditTournamentform.DOBMonth" style="width: 11%;">
+
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                        </select>
+                      
+                        <select class="maindropdown myselectt" placeholder="YYYY" [(ngModel)]="playerHomePageobj.EditTournamentform.DOBYear" style="width: 11%;">
+                            <option *ngFor="let year of getYear()" getYear value={{year}}>{{year}}</option>
+                        </select>
+                    </div>
+                    <!--<md-input-container class="maindropdownfirst paddclass">
+            <input mdInput [mdDatepicker]="picker" placeholder="Choose a date" [(ngModel)]="playerHomePageobj.EditTournamentform.BirthDate">
+            <button mdSuffix [mdDatepickerToggle]="picker"></button>
+          </md-input-container>
+          <md-datepicker touchUi="true" #picker></md-datepicker>-->
+                </div>
+                <div class="spinner-div1">
+             <md-spinner *ngIf="playerHomePageobj.tournamentLoadingIcon"  class="loadingIcon"></md-spinner>
+            </div>
+                <div class="row mybtnsub">
+                    
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="saveTournamenteditdata(1)" style="cursor:pointer">Save</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="CancelEditTournament(1)" style="cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <!--player tournament prfile deailse2-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile2===0">
+                <div class="row">
+                    <p class="player-dtl">CONTACTS :</p>
+                    <p style="margin-top: 30px;cursor:pointer" (click)="editTournamentProfile(2)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div>
+
+                
+
+                
+
+               
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Address Line 1</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Address1}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Address Line 2</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Address2}}</span>
+
+                </div>
+
+                 <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">City</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.City}}</span>
+
+                </div>
+
+
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">State</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.State}}</span>
+
+                </div>
+
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Country</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Country}}</span>
+
+                </div>
+
+
+
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Postal Code</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PostalCode}}</span>
+
+                </div>
+
+
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Phone Number</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Phone}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Emergency Contact Name</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.EmergencyContactName}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Emergency Contact</b>
+                        <div [ngClass]="{className1: expression1, className2: expression2}">
+
+                        </div>
+                    </h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.EmergencyContact}}</span>
+
+                </div>
+            </div>
+            <!--player tournament prfile deailse2 edit-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile2===1">
+                <div>
+                    <p class="player-dtl2">CONTACTS :</p>
+                </div>
+
+               
+                
+
+
+               
+
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="first_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Address Line 1</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.Address1" required>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.Address1" placeholder="Address Line1"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Address line 2</b></label>
+                    <div class="col-xs-8 padclasss">
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.Address2" required>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.Address2" placeholder="Address Line2"> -->
+                    </div>
+                </div>
+
+
+                 <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">City</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.City" required>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.City" placeholder="City"> -->
+                    </div>
+                </div>
+
+                <div class="row myclass-div" *ngIf="playerHomePageobj.states && playerHomePageobj.states.length>0" >
+                    <label for="last_name" class="col-md-2 col-form-label "><b class="valueweight">State</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdown2edit myselectt" [(ngModel)]="playerHomePageobj.EditTournamentform.State" style="width:38%">
+
+                            <option *ngFor="let state of playerHomePageobj.states" value={{state.State}}>{{state.State}}</option>
+                            <!--<option  value="Hawaii">Hawaii</option>
+                              <option  value="Florida">Florida</option>
+                              <option  value="Texas">Texas</option>
+                              <option  value="Massachusetts">Massachusetts</option>
+                              <option  value="Alaska">Alaska</option>
+                              <option  value="Alabama">Alabama</option>
+                              <option  value="Georgia">Georgia</option>
+                              <option  value="Minnesota">Minnesota</option>
+                              <option  value="North Carolina">North Carolina</option>
+                              <option  value="Pennsylvania">Pennsylvania</option>-->
+                        </select>
+                       
+                    </div>
+                </div>
+                <div class="row common-cls" *ngIf="playerHomePageobj.states && playerHomePageobj.states.length===0">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">State</b></label>
+                    <div class="col-xs-8 padclasss">
+
+                         <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.State" required>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.City" placeholder="City"> -->
+                    </div>
+                </div>
+
+                 <div class="row myclass-div">
+                    <label for="last_name" class="col-md-2 col-form-label "><b class="valueweight">Country</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdown2edit myselectt" (change)="countrybasedstates()" [(ngModel)]="playerHomePageobj.EditTournamentform.Country" style="width:38%">
+                            <option *ngFor="let country of playerHomePageobj.countries" value={{country.Country}}>{{country.Country}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Postal Code</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.PostalCode" required>
+                        </md-input-container>
+
+                        <!-- <input type="number" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.PostalCode" placeholder="Postal Code"> -->
+                    </div>
+                </div>
+
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="first_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Phone Number</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input (keyup)="phnoChange($event)" mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.Phone" appOnlyNumber="true"  required minlength="10" maxlength="10">
+                        </md-input-container>
+
+                        <!-- <input type="number" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.Phone" placeholder="Phone number"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Emergency Contact Name</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.EmergencyContactName" required>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.EmergencyContactName" placeholder="Emergency Contact Name"> -->
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label id="profile-field-names" for="last_name" class="col-md-2 col-form-label mr-2"><b class="valueweight">Emergency Contact Number</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput (keyup)="emgphnoChange($event)" [(ngModel)]="playerHomePageobj.EditTournamentform.EmergencyContact" appOnlyNumber="true" required minlength="10" maxlength="10">
+                        </md-input-container>
+
+                        <!-- <input type="number" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.EmergencyContact" placeholder="Emergency Contact Number"> -->
+                    </div>
+                </div>
+                <div class="showerrormsgP" *ngIf="playerHomePageobj.TournamentFormerror">{{playerHomePageobj.TournamentFormerrormsg}}</div>
+               <div class="spinner-div1">
+             <md-spinner *ngIf="playerHomePageobj.tournamentLoadingIcon"  class="loadingIcon"></md-spinner>
+            </div>
+                <div class="row mybtnsub">
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="saveTournamenteditdata(2)" style="cursor:pointer">Save</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="CancelEditTournament(2)" style="cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <!--player tournament prfile deailse3-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile3===0">
+                <div class="row">
+                    <p class="player-dtl">MEMBERSHIP AND RATING INFORMATION :</p>
+                    <p style="margin-top: 30px;cursor:pointer" (click)="editTournamentProfile(3)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Club</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.Club}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Singles Skill Level</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.SinglesSkillLevel}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">Doubles Skill Level</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.DoublesSkillLevel}}</span>
+
+                </div>
+
+                <!--<div class="row mypadd-class">
+          <h3 class="quest">Skill Rating By</h3>
+          <span style="padding-left: 23px;">
+                                  </span>
+          <span class="child-valuee">{{playerDetails.SkillRatingBy}}<</span>
+
+        </div>-->
+
+                <div class="row mypadd-class">
+                    <h3 class="quest"><b class="valueweight">USAPA Member Number</b></h3>
+                    <span style="padding-left: 23px;">
+                                  </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.USAPAMemberNumber}}</span>
+
+                </div>
+            </div>
+            <!--player tournament prfile deailse3 edit-->
+            <div *ngIf="playerHomePageobj.EditTournamentProfile3===1">
+                <div>
+                    <p class="player-dtl4">MEMBERSHIP AND RATING INFORMATION :</p>
+                </div>
+                <div class="row common-cls">
+                    <label for="first_name" class="col-md-2 col-form-label mr-3" style="margin-top:20px;"><b class="valueweight">Club</b></label>
+                    <div class="col-xs-8 padclasss">
+
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.Club" required>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.Club" placeholder="Club Name"> -->
+                    </div>
+                </div>
+                <br>
+                <div class="row myclass-div">
+                    <label for="last_name" class="col-md-2 col-form-label mr-3"><b class="valueweight">Singles Skill Level</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdown2edit myselectt" placeholder="Select Skill Level" [(ngModel)]="playerHomePageobj.EditTournamentform.SinglesSkillLevel" style="width:37%">
+                            <option selected disabled>Select Skill Level</option>
+                            <option value="N/A">N/A</option>
+                            <option value="3.0">3.0</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4.0">4.0</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5.0">5.0</option>
+                        </select>
+                    </div>
+
+                </div>
+                <br>
+                <div class="row myclass-div">
+                    <label for="last_name" class="col-md-2 col-form-label mr-3"><b class="valueweight">Doubles Skill Level</b><span class="star">*</span></label>
+                    <div class="col-xs-8 padclasss">
+                        <select class="maindropdown2edit myselectt" placeholder="Select Skill Level" [(ngModel)]="playerHomePageobj.EditTournamentform.DoublesSkillLevel" style="width:37%">
+
+                            <option value="N/A">N/A</option>
+                            <option value="3.0">3.0</option>
+                            <option value="3.5">3.5</option>
+                            <option value="4.0">4.0</option>
+                            <option value="4.5">4.5</option>
+                            <option value="5.0">5.0</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row common-cls">
+                    <label for="last_name" class="col-md-2 col-form-label mr-3"><b class="valueweight">USAPA Member Number</b></label>
+                    <div class="col-xs-8 padclasss">
+
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerHomePageobj.EditTournamentform.USAPAMemberNumber" required>
+                        </md-input-container>
+
+                        <!-- <input type="number" class="form-control myfavinput" [(ngModel)]="playerHomePageobj.EditTournamentform.USAPAMemberNumber" placeholder="USAPA Member Number"> -->
+                    </div>
+                </div>
+                <div class="spinner-div1">
+             <md-spinner *ngIf="playerHomePageobj.tournamentLoadingIcon"  class="loadingIcon"></md-spinner>
+            </div>
+                <div class="row mybtnsub">
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="saveTournamenteditdata(3)" style="cursor:pointer">Save</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="CancelEditTournament(3)" style="cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--player public profile view and edit div -->
+        <div *ngIf="playerHomePageobj.show===2">
+
+            <div *ngIf="playerHomePageobj.AddPublicProfile===0 && playerHomePageobj.PublicProfileLength=== 0">
+
+                <div CLASS="row">
+                 <p class="player-dtl">PUBLIC PROFILE :</p>
+                    <p style="margin-top: 0px;cursor:pointer;float:right;" (click)="editTournamentProfile(4)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div>
+
+                <!--<md-list dense>
+            <md-list-item class="player-list mat-elevation-z1" (click)="editTournamentProfile(4)">
+                   <span>Click Here To Provide The Public Profile Information</span> 
+               </md-list-item>
+            </md-list>-->
+            </div>
+
+
+
+
+            <!--<div *ngIf="playerHomePageobj.AddPublicProfile===0 && playerHomePageobj.PublicProfileLength=== 0" style="padding: 3%;">
+          <h1 (click)="editTournamentProfile(4)">Click Here To Provide The Public Profile Information</h1>
+        </div>-->
+
+
+            <!--PUBLIC PROFILE lable and value -->
+            <div *ngIf="playerHomePageobj.AddPublicProfile===0 && playerHomePageobj.PublicProfileLength!==0" style="padding: 0%;">
+            <div class="row">
+                    <p class="player-dtl">PUBLIC PROFILE :</p>
+                    <p style="margin-top: 30px;cursor:pointer" (click)="editTournamentProfile(4)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div>
+
+
+
+
+                <!-- <div>
+                    <p style="margin-top: 0px;cursor:pointer;float:right;" (click)="editTournamentProfile(4)">
+                        <img class="Editclass" src="assets/icon/Edit.svg"><span class="edittext">Edit</span>
+                    </p>
+                </div> -->
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Home Town</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.HomeTown}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Swings</b></h3>
+                    <span style="padding-left: 23px;"> </span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.Swings}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Sports Background</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.HomeClub}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Sponsored Club</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.SponsoredClub}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Indoor/Outdoor Preference</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.IndoorOutdoorPreference}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">Favorite Paddle</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.FavoritePaddle}}</span>
+
+                </div>
+                <div class="row mypadd-class">
+                    <h3 class="quest1"><b class="valueweight">How long have you been playing</b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee">:&nbsp;&nbsp;&nbsp;{{playerDetails.PublicProfile.BeenPlaying}}</span>
+
+                </div>
+                <div class="row mypadd-class" id="mypadd-id">
+                    <h3 class="quest1" id="quest2"><b class="valueweight">Favorite Facility/location Play :</b> </h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee" id="child-value2">{{playerDetails.PublicProfile.FavoriteFacility}}</span>
+
+                </div>
+                <div class="row mypadd-class" id="mypadd-id">
+                    <h3 class="quest1" id="quest2"><b class="valueweight">Furthest Location /Tournament you have traveled To Play : </b></h3>
+                    <span style="padding-left: 23px;"> </span>
+                    <span class="child-valuee" id="child-value2">{{playerDetails.PublicProfile.FurthestLocation}}</span>
+
+                </div>
+                <div class="row mypadd-class" id="mypadd-id">
+                    <h3 class="quest1" id="quest2"><b class="valueweight">Wins that you are most proud of : </b></h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee" id="child-value2">{{playerDetails.PublicProfile.MostProud}}</span>
+
+                </div>
+                <div class="row mypadd-class" id="mypadd-id">
+                    <h3 class="quest1" id="quest2"><b class="valueweight">Singles/Doubles preference :</b> </h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee" id="child-value2">{{playerDetails.PublicProfile.SinglesDoubles}}</span>
+
+                </div>
+                <div class="row mypadd-class" id="mypadd-id">
+                    <h3 class="quest1" id="quest2"><b class="valueweight">Misc information to know :</b> </h3>
+                    <span style="padding-left: 23px;"></span>
+                    <span class="child-valuee" id="child-value2">{{playerDetails.PublicProfile.MiscInformation}}</span>
+
+                </div>
+            </div>
+
+
+            <!--Edit PUBLIC PROFILE values--> 
+            <div *ngIf="playerHomePageobj.AddPublicProfile===1">
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Home Town</b></label>
+                    <div class="col-md-7 col-xs-12">
+
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.HomeTown" required>
+                        </md-input-container>
+
+
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.HomeTown"> -->
+                    </div>
+                </div>
+                <div class="row common-clspublic">
+
+
+                    <label for="first_name"  class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Swings</b></label>
+                    <div class="col-md-7 col-xs-12" >
+                        <select class="maindropdownfirst1 myselectt" placeholder="Select Swings" [(ngModel)]="playerDetails.PublicProfile.Swings" style="width:38%">
+
+                            <option value="Right Handed">Right Handed</option>
+                            <option value="Left Handed">Left Handed</option>
+                            <option value="Both">Both</option>
+                        </select>
+                        <!--<input type="text" class="form-control myfavinput" [(ngModel)]="TournamentFormObj.Swings">-->
+                    </div>
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Swings </label>
+            <div class="col-xs-9">
+              <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.Swings">
+            </div>-->
+                </div>
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Sports Background</b></label>
+                    <div class="col-md-7 col-xs-12">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.HomeClub" required>
+                        </md-input-container>
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.HomeClub"> -->
+                    </div>
+                </div>
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Sponsored Club</b></label>
+                    <div class="col-md-7 col-xs-12">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.SponsoredClub" required>
+                        </md-input-container>
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.SponsoredClub"> -->
+                    </div>
+                </div>
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Indoor/OutdoorPreference</b></label>
+                    <div class="col-xs-7">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.IndoorOutdoorPreference" required>
+                        </md-input-container>
+
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.IndoorOutdoorPreference"> -->
+                    </div>
+                </div>
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">Favorite Paddle</b></label>
+                    <div class="col-xs-7">
+
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.FavoritePaddle" required>
+                        </md-input-container>
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.FavoritePaddle"> -->
+                    </div>
+                </div>
+                <div class="row common-clspublic">
+                    <label id="profile-field-names1" for="first_name" class="col-md-4 col-form-label form2 mr-2"><b class="valueweight">How long have you been playing</b></label>
+                    <div class="col-xs-7">
+
+                        <md-input-container class="example-full-width" style="width:38%">
+                            <input mdInput [(ngModel)]="playerDetails.PublicProfile.BeenPlaying" required>
+                        </md-input-container>
+                        <!-- <input type="text" class="form-control  myfavinput" [(ngModel)]="playerDetails.PublicProfile.BeenPlaying"> -->
+                    </div>
+                </div>
+
+
+
+                <!--<div class="row common-clspublic">
+         <p class="textlabel" id="textlabel1">Favorite facility/Location to play </p>
+            <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Favorite Paddle</label>-->
+                <!--<div class="col-xs-9">
+              <textarea type="text" rows="5" cols="70" class="form-control myfavinput" [(ngModel)]="playerDetails.PublicProfile.FavoriteFacility">
+                              </textarea>
+            </div>
+          </div>-->
+
+
+
+                <!--<div class="row common-clspublic">
+            <label for="first_name" class="col-md-6 col-form-label form2 mr-2">How long have you been playing</label>
+            <div class="col-xs-9">
+              <textarea type="text" class="form-control myfavinput" [(ngModel)]="playerDetails.PublicProfile.BeenPlaying">
+                              </textarea>
+            </div>
+          </div>-->
+                <div class="common-clspublic textarea-pad">
+                    <p class="textlabel" id="textlabel1" style="width:64%"><b class="valueweight">Favorite facility/Location to play</b>
+                        <span *ngIf="playerDetails.FavoriteFacilitycount!==undefined" style="float:right" class="textcount">{{playerDetails.FavoriteFacilitycount}}</span>
+                        <span *ngIf="playerDetails.FavoriteFacilitycount===undefined" class="textcount" id="cnt-val">300</span>
+                    </p>
+                    
+
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Favorite facility/Location to play</label>-->
+                    <div>
+                        <textarea type="text" (keyup)="FavoriteFacility()" rows="5" cols="70" class="form-control myfavinput1" [(ngModel)]="playerDetails.PublicProfile.FavoriteFacility" maxlength="300">
+                                </textarea>
+                    </div>
+                </div>
+                <div class="common-clspublic textarea-pad">
+                    <p class="textlabel" id="textlabel1" style="width:64%"><b class="valueweight">Furthest location/Tournament you have traveled to play</b>
+                        <span *ngIf="playerDetails.FurthestLocationcount!==undefined" style="float:right" class="textcount">{{playerDetails.FurthestLocationcount}}</span>
+                        <span *ngIf="playerDetails.FurthestLocationcount===undefined" class="textcount" id="cnt-val">300</span>
+                    </p>
+                    
+
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Furthest location/Tournament you have traveled to play</label>-->
+                    <div>
+                        <textarea type="text" (keyup)="FurthestLocation()" rows="5" cols="70" class="form-control myfavinput1" [(ngModel)]="playerDetails.PublicProfile.FurthestLocation" maxlength="300">
+                              </textarea>
+                    </div>
+                </div>
+                <div class="common-clspublic textarea-pad">
+                    <p class="textlabel" id="textlabel1" style="width:64%"><b class="valueweight">Wins that you are most proud of</b>
+                        <span *ngIf="playerDetails.MostProudcount!==undefined" style="float:right" class="textcount">{{playerDetails.MostProudcount}}</span>
+                        <span *ngIf="playerDetails.MostProudcount===undefined" class="textcount" id="cnt-val">300</span>
+                    </p>
+                    
+
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Wins that you are most proud of</label>-->
+                    <div>
+                        <textarea type="text" (keyup)="mostProud()" rows="5" cols="70" class="form-control myfavinput1" [(ngModel)]="playerDetails.PublicProfile.MostProud" maxlength="300">
+                                </textarea>
+                    </div>
+                </div>
+                <div class="common-clspublic textarea-pad">
+                    <p class="textlabel" id="textlabel1" style="width:64%"><b class="valueweight">Singles/Doubles preference</b>
+                        <span *ngIf="playerDetails.SinglesDoublescount!==undefined" style="float:right" class="textcount">{{playerDetails.SinglesDoublescount}}</span>
+                        <span *ngIf="playerDetails.SinglesDoublescount===undefined" class="textcount" id="cnt-val">300</span>
+                    </p>
+                    
+
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Singles/Doubles preference</label>-->
+                    <div>
+                        <textarea type="text" (keyup)="SinglesOrDoubles()" rows="5" cols="70" class="form-control myfavinput1" [(ngModel)]="playerDetails.PublicProfile.SinglesDoubles" maxlength="300">
+                              </textarea>
+                    </div>
+                </div>
+                <div class="common-clspublic textarea-pad">
+                    <p class="textlabel" id="textlabel1" style="width:64%"><b class="valueweight">Misc information to know</b> <span *ngIf="playerDetails.MiscInformationcount!==undefined" style="float:right" class="textcount">{{playerDetails.MiscInformationcount}}</span>
+                    <span *ngIf="playerDetails.MiscInformationcount===undefined" class="textcount" id="cnt-val">300</span>
+                    </p>
+                    
+
+                    <!--<label for="first_name" class="col-md-6 col-form-label form2 mr-2">Misc information to know</label>-->
+                    <div>
+                        <textarea type="text" (keyup)="MiscInformation()" rows="5" cols="70" class="form-control myfavinput1" [(ngModel)]="playerDetails.PublicProfile.MiscInformation" maxlength="300">
+                              </textarea>
+                    </div>
+                </div>
+                <div class="spinner-div1">
+             <md-spinner *ngIf="playerHomePageobj.tournamentLoadingIcon"  class="loadingIcon"></md-spinner>
+            </div>
+                <div class="row mybtnsub">
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="saveTournamenteditdata(4)" style="cursor:pointer">Save</button>
+                    </div>
+                    <div>
+                        <button class="btn btn-default submitbtns" (click)="CancelEditTournament(4)" style="cursor:pointer">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!--player photes-->
+        <div *ngIf="playerHomePageobj.show === 3;">
+            <div class="row" style="margin: 3%;">
+                <div *ngIf="playerDetails.Photos && playerDetails.Photos.length===0" class="col-lg-3 col-md-3" style="padding:6px;">
+                    <!--*ngIf="playerDetails.loadingIcon"-->
+                    <div class="spinner-div1">
+                    <md-spinner *ngIf="playerDetails.loadingIcon" class="uploadspinner"></md-spinner>
+                    </div>
+                    <div class="thumbnail">
+
+                        <label class="uploader">
+                <img class="player-img" src="assets/icon/player.png">
+
+                <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event,1)" multiple/>
+                </label>
+                        <!--<img class="player-img" src="assets/icon/player.png" style="width: 100%;">-->
+                    </div>
+                </div>
+
+                <!-- <div *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0" class="col-lg-1 col-md-1" style="padding:6px;">
+                    <md-spinner *ngIf="playerDetails.loadingIcon" class="loadingIcon2"></md-spinner>
+                    <div>
+                        <label class="uploader">
+                <img class="player-img1" src="assets/icon/UploadImages1.svg">
+
+                <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event,1)" multiple/>
+                </label> -->
+                <!--<img class="player-img" src="assets/icon/player.png" style="width: 100%;">-->
+                <!-- </div>
+                </div> -->
+
+
+
+             <!--for mobile view start-->
+                <div *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0" class="col-lg-2 col-md-2 mobileshow" style="padding:0px;margin-left: 26px;">
+                       <div class="spinner-divapp"  style="height: 100px;top:-27px;width:100%;">
+                           <md-spinner  class="uploadspinner2"></md-spinner>
+                    </div>
+                    <div>
+                        <label class="mahi-label1 row">
+                        <img src="assets/icon/uploadphoto1.png" class="upload-photo">
+                        <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event,1)" multiple/>
+                       </label>
+                    </div>
+                </div>
+                  <!--for mobile view start-->
+                <div class="col-lg-10 col-md-10 col-sm-10 col-xs-10 carousel1 row" *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0">
+                    <div>
+                        <div id="slider" class="myslide">
+                            <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+                                <div class="carousel-inner" id="carousel-id">
+                                    <div [class.active]="index == 0" class="item carousel-item" *ngFor="let photo of playerDetails.Photos; let index=index" [attr.data-slide-number]="index">
+                                        <img [src]="photo" style=" margin:auto;height: 400px;width:450px;max-width:450px;min-width:450px;">
+                                    </div>
+                                    <div >
+                                    <div *ngIf="playerDetails.Photos.length>1">
+                                    <a class='left carousel-control' href='#myCarousel' data-slide='prev'>
+                                        <span class='glyphicon glyphicon-chevron-left'></span>
+                                    </a>
+                                    <a class='right carousel-control' href='#myCarousel' data-slide='next'>
+                                        <span class='glyphicon glyphicon-chevron-right'></span>
+                                    </a>
+                                    </div>
+                                    </div>
+                                </div>
+                                
+                                    <ul class="carousel-indicators" style="overflow-x: scroll;overflow-y: hidden;width: 450px;max-width: 450px;min-width: 450px;">
+                                        <li *ngFor="let photo of playerDetails.Photos; let index=index" [attr.data-slide-to]="index" data-target="#myCarousel" style="width: 100px;height: 100px;min-width: 100px;">
+                                            <a id="carousel-selector-0" class="selected">
+                                                <img [src]="photo" style="height:100px;margin: 23px 0px 0px 0px;width: 100px;" class="img-responsive">
+                                            </a>
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0" class="col-lg-2 col-md-2 webshow" style="padding:0px;margin-left: 26px;">
+                    <div class="spinner-divapp" *ngIf="playerDetails.loadingIcon"  style="height: 100px;top:-27px;width:100%;">
+                    <md-spinner  class="uploadspinner2"></md-spinner>
+                    </div>
+                    <div>
+                <label class="mahi-label1 row">
+                 <img src="assets/icon/uploadphoto1.png" class="upload-photo">
+                 <input type="file" class="upLoadStyles" (change)="upLoadPlayerImg($event,1)" multiple/>
+               </label>
+                    </div>
+                </div>
+
+                <!--<div class="col-lg-7 col-md-7 col-sm-11 col-xs-11 row carousel1" *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0">
+          <div>
+            <div id="slider">
+              <div id="myCarousel" class="carousel slide" data-interval="false" data-ride="carousel">
+                <div class="carousel-inner" id="carousel-id">
+                  <div [class.active]="index == 0" class="item carousel-item" *ngFor="let photo of playerDetails.Photos; let index=index" [attr.data-slide-number]="index">
+                    <img [src]="photo" style="height:500px; margin:auto;">
+                  </div>
+                  <a class='left carousel-control' href='#myCarousel' data-slide='prev'>
+            <span class='glyphicon glyphicon-chevron-left'></span>
+        </a>
+                  <a class='right carousel-control' href='#myCarousel' data-slide='next'>
+            <span class='glyphicon glyphicon-chevron-right'></span>
+        </a>
+                </div>
+                <div>
+                  <ul class="carousel-indicators" style="width: 100%;overflow: scroll;overflow-y: hidden;height: 200px;">
+                    <li *ngFor="let photo of playerDetails.Photos; let index=index" [attr.data-slide-to]="index" data-target="#myCarousel">
+                      <a id="carousel-selector-0" class="selected">
+                                <img [src]="photo"  style="height:130px;margin: 23px 0px 0px 0px;" class="img-responsive" >
+                            </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>-->
+                <!--<div class="row" *ngIf="playerDetails.Photos && playerDetails.Photos.length!==0">
+          <div *ngFor="let photo of playerDetails.Photos" class="col-md-3" style="padding:6px;">
+            <div class="uploadImd">
+              <label class="uploader">
+                <img class="player-img" src={{photo}}>
+                </label>
+            </div>
+            <button class="imgDelete" (click)="DeleteImgs(photo)">Delete</button>
+          </div>
+        </div>-->
+                <!--<div class="col-md-2" style="padding:6px;" >
+                <div class="thumbnail">
+                    <img class="player-img" src="assets/icon/player.png" style="width: 100%;">
+                </div>
+              </div>
+               <div class="col-md-2" style="padding:6px;" >
+                <div class="thumbnail">
+                    <img class="player-img" src="assets/icon/player.png" style="width: 100%;">
+                </div>
+              </div>-->
+            </div>
+        </div>
+
+    </div>
+    <div class="footerstyles text-center">
+        <div class="row abcded">
+            <div class="col-md-4 col-lg-4 addheight">
+                <img class="addslogo" src="assets/icon/footeradds.svg">
+            </div>
+            <div class="footerheading col-md-4 col-lg-4">Copyright<span>&#169;</span>World Of Pickleball</div>
+            <div class="col-md-5 col-lg-5">
+                <img class="addslogo" src="assets/icon/footeradds.svg">
+            </div>
+        </div>
+    </div>
+</div>

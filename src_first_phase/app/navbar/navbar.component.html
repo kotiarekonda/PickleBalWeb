@@ -1,0 +1,62 @@
+<nav class="navbordercolor navbar navbar-default">
+  <div>
+
+    <button md-button (click)="home()" class="navbarbuttons homebutton" [routerLink]="['/']" [ngClass]="{'myactive':navbarobj.buttons === 1,'btmcenterdv15':navbarobj.buttons !== 1}">
+          <img src="assets/icon/home.svg" />
+          <!--<md-icon svgIcon="assets/icon/home.svg"></md-icon>-->
+    </button>
+
+
+
+     <div class="dropdown ">
+       <button md-button (click)="TOURNAMENTS()" class="dropbtn navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 2,'btmcenterdv15':navbarobj.buttons !== 2}">
+          <b class="mibtn">TOURNAMENTS</b>
+    </button>
+  <!--<button md-button (click)="player()"   [ngClass]="{'myactive':navbarobj.buttons === 3,'btmcenterdv15':navbarobj.buttons !== 3}"><b class="mibtn">PLAYERS</b></button>-->
+  <div class="dropdown-content">
+    <!--<a [routerLink]="['/TournmentListingpage']">Tournament Listing</a>-->
+    <a>Tournament Listing</a>
+    <a >Tournament Setup/TD Login</a>
+    <!--<a (click)="tournamentsignin()">Tournament Setup/TD Login1</a>-->
+  </div>
+</div>
+    <!--<button md-button (click)="TOURNAMENTS()" class="navbarbuttons tournamentsbutton mblevlgtd" [routerLink]="['/TOURNAMENTS']" [ngClass]="{'myactive':navbarobj.buttons === 2,'btmcenterdv15':navbarobj.buttons !== 2}">
+          <b class="mibtn">TOURNAMENTS</b>
+    </button>-->
+    <!--<button class="navbarbuttons" >
+        <b>PLAYERS</b>
+    </button>-->
+    <div class="dropdown ">
+  <button md-button (click)="player()" (mouseover)="PlayerDropDownshow()" class="dropbtn navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 3,'btmcenterdv15':navbarobj.buttons !== 3}"><b class="mibtn">PLAYERS</b></button>
+  <div *ngIf="navbarobj.PlayerDropDownsOpstionshow===1" class="dropdown-content">
+    <div *ngIf="navbarobj.signInSignupHide===false">
+    <a style="cursor:pointer" (click)="SignInModel()">Sign In</a>
+    <a (click)="signInUp()" [routerLink]="['/playerRegistration']">Sign Up</a>
+    </div>
+  <div *ngIf="navbarobj.signInSignupHide===true">
+    <a style="cursor:pointer" (click)="changePassword()">Change Password</a>
+    </div>
+    <a (click)="player()"  [routerLink]="['/playerLookUp']">Profile LookUp</a>
+  </div>
+</div>
+    <button md-button (click)="CLUBS()"  class="navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 4,'btmcenterdv15':navbarobj.buttons !== 4}">
+          <b class="mibtn">CLUBS</b>
+    </button>
+    <button md-button (click)="SHOPPING()" class="navbarbuttons" [ngClass]="{'myactive':navbarobj.buttons === 5,'btmcenterdv15':navbarobj.buttons !== 5}">
+          <b class="mibtn">SHOPPING</b>
+    </button>
+    <button md-button (click)="CLINICS()" class="navbarbuttons clinics"  [ngClass]="{'myactive':navbarobj.buttons === 6,'btmcenterdv15':navbarobj.buttons !== 6}">
+          <b class="mibtn">CLINICS&TRAININGS</b>
+    </button>
+    <!--<button *ngIf="navbarobj.token!==undefined" (click)="LogOut()" class="navbarbuttons"  [ngClass]="{'myactive':navbarobj.buttons === 6,'btmcenterdv15':navbarobj.buttons !== 6}">
+          <b class="mibtn">LogOut</b>
+    </button>-->
+    <button *ngIf="navbarobj.signInSignupHide" (click)="LogOut()" class="navbarbuttons logout"  [ngClass]="{'myactive':navbarobj.buttons === 7,'btmcenterdv15':navbarobj.buttons !== 7}">
+          <b class="mibtn">Log Out</b>
+    </button>
+  </div>
+  <!--<div *ngIf="navbarobj.naresh" class="model"></div>-->
+</nav>
+
+
+<!--[routerLink]="['/playerRegistration']"-->

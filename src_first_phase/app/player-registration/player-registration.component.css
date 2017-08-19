@@ -1,0 +1,863 @@
+.maindiv-one {
+    padding: 0 2%;
+    background-color: #fafafa;
+    padding-top: 10px;
+    /*min-height: 100vh;
+    max-height: 100vh;*/
+    /*min-height: 82vh;*/
+}
+
+.container-fluid {
+    padding: 0px;
+}
+
+.one-h3 {
+    padding-top: 8px;
+    text-align: center;
+    /*color:#5E98B6;*/
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    background: -webkit-radial-gradient(rgb(128, 189, 236), #0E628C);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.one-h5 {
+    font-weight: 500;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 15px;
+    color: #7b7b7b;
+}
+
+.common-cls {
+    margin: 7px;
+    height: 48px;
+}
+
+.common-clspublic {
+    margin: 5px;
+    height: 47px;
+}
+
+#profile-field-names {
+    margin-top: 6px;
+    padding: 0px;
+    margin-right: 0px
+}
+
+.maindropdown {
+    margin: 0 2px 0 0px;
+    height: 28px;
+    max-width: 11%;
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+}
+
+ .maindropdown2 {
+    margin: 0 7px 0 0px;
+    height: 33px;
+    width: 250px;
+    /*max-width: 45%;*/
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+}
+
+.maindropdownfirst {
+    margin: 0 7px 0 0px;
+    height: 33px;
+    width: 213px;
+    /*max-width: 55%;*/
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+}
+
+.maindropdown2skill {
+    margin: 0 7px 0 0px;
+    height: 33px;
+    width: 172px;
+    /*max-width: 45%;*/
+    border-radius: 3px;
+    font-size: 12px;
+    color: #636c88;
+}
+
+.myclass-divdatepick {
+    margin: 7px 0;
+    padding-left: 8px;
+}
+
+.picker-label {
+    margin-top: 10px;
+}
+
+.showerrormsgP {
+    margin: 0px;
+    font-size: 10px;
+    margin: 6px 0;
+    color: red;
+}
+
+.paddclass {
+    padding-left: 10px;
+}
+
+.submitbtns {
+    width: 95px;
+    padding: 0px !important;
+    margin: 0 10px;
+    background-color: #d9d9d9;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    height: 30px;
+    line-height: 10px;
+}
+
+.leftbtns {
+    padding: 2px;
+    font-size: 11px;
+    font-weight: 600;
+    width: 87%;
+    margin-left: 7%;
+    background-color: #d3d3d3;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.leftbtns:hover {
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.myactive {
+    background-color: #3c8fb0;
+    color: #fff;
+    cursor: pointer;
+}
+
+.myactive:hover {
+    background-color: #3c8fb0;
+    color: #fff;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+.leftbtns :active {
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 90%;
+    margin-left: 5%;
+    background-color: deepskyblue;
+}
+
+.col-form-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+    padding-left: 0px;
+}
+
+.player-dtl {
+    color: #13658F;
+    font-size: 14px;
+    font-weight: 500;
+    /*border-bottom:1.4px solid #13658F;*/
+    /*width: 112px;*/
+    margin-top: 32px;
+    margin-left: 21px;
+    text-decoration: underline;
+}
+
+.player-dtl2 {
+    color: #13658F;
+    font-size: 14px;
+    font-weight: 500;
+    /*border-bottom:1.4px solid #13658F;*/
+    /*width: 125px;*/
+    margin-top: 32px;
+    margin-left: 21px;
+    text-decoration: underline;
+}
+
+.player-dtl3 {
+    color: #13658F;
+    font-size: 14px;
+    font-weight: 500;
+    /*border-bottom:1.4px solid #13658F;*/
+    /*width: 170px;*/
+    margin-top: 32px;
+    margin-left: 21px;
+    text-decoration: underline;
+}
+
+.player-dtl4 {
+    color: #13658F;
+    font-size: 14px;
+    font-weight: 500;
+    /*border-bottom:1.4px solid #13658F;*/
+    /*width: 282px;*/
+    margin-top: 32px;
+    margin-left: 21px;
+    text-decoration: underline;
+}
+
+.myfavinput {
+    height: 33px;
+    font-size: 12px;
+    width: 250px;
+}
+
+.myfavinput1 {
+    /*height: 33px;*/
+    font-size: 12px;
+    /*width: 250px;*/
+}
+
+.mybtnsub {
+    padding-left: 34%;
+    margin-top: 17px;
+    margin-bottom: 85px;
+    width: 100%;
+}
+
+#mybtn {
+    padding-left: 34%;
+    margin-top: 140px;
+    margin-bottom: 85px;
+    width: 100%;
+}
+
+.onetwo {
+    padding-left: 7px !important;
+}
+
+.onetwothree {
+    padding-left: 7px !important;
+    /*margin-bottom: 100px;*/
+}
+
+.submitbtns:focus {
+    background-color: #399ec7;
+    color: #fff;
+}
+
+
+/*.myactive{
+    background-color: #8CB4C4;
+    color: #fff;
+}*/
+
+.userprofile {
+    height: 165px;
+    width: 145px;
+    background-color: lightgray;
+    margin-left: 60px;
+    margin-top: 16px;
+}
+
+.userpic {
+    padding: 10px;
+    padding-left: 0px;
+}
+
+.successfull {
+    position: absolute;
+    /* margin: auto; */
+    margin-top: 9%;
+}
+
+.onee {
+    color: lightslategray;
+    text-align: center;
+    font-size: 22px;
+    height: 90px;
+    background-color: lightgray;
+    width: 350px;
+    padding-left: 10px;
+    padding-top: 30px;
+    margin-left: 33%;
+    border-radius: 10px;
+}
+
+.steppdiv {
+    margin-left: 28.5%;
+}
+
+.stepperbuttondiv {
+    font-size: 11px;
+    margin-left: 1%;
+}
+
+.stepperbutton {
+    border: none;
+    border-radius: 2px;
+    padding: 3px;
+    font-family: inherit;
+}
+
+.stepperbuttonactive {
+    background-color: #8CB4C4;
+    color: #fff;
+}
+
+
+/*.breadcrumb sryles start*/
+
+.breadcrumb {
+    /*centering*/
+    display: inline-block;
+    /*box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);*/
+    overflow: hidden;
+    border-radius: 5px;
+    padding: 0px;
+    /*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+    counter-reset: flag;
+    cursor: pointer;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    outline: none;
+    display: block;
+    float: left;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    line-height: 25px;
+    color: white;
+    /*need more margin on the left of links to accomodate the numbers*/
+    padding: 3px 6px 3px 18px;
+    background: #666;
+    background: linear-gradient(#666, #333);
+    position: relative;
+}
+
+
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+
+.breadcrumb a:first-child {
+    padding: 3px 9px;
+    border-radius: 5px 0 0 5px;
+    /*to match with the parent's radius*/
+}
+
+.breadcrumb a:first-child:before {
+    left: 14px;
+}
+
+.breadcrumb a:last-child {
+    border-radius: 0 5px 5px 0;
+    /*this was to prevent glitches on hover*/
+    padding-right: 7px;
+}
+
+
+/*hover/active styles*/
+
+.breadcrumb a.active,
+.breadcrumb a:hover {
+    background: #ff4081;
+    color: #fff;
+}
+
+.breadcrumb a.active:after,
+.breadcrumb a:hover:after {
+    background: #ff4081;
+    color: #fff;
+}
+
+.breadcrumb a:after {
+    content: '';
+    position: absolute;
+    top: -11px;
+    right: -25px;
+    width: 51px;
+    height: 54px;
+    /*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+  length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+  if diagonal required = 1; length = 1/1.414 = 0.707*/
+    transform: scale(0.407) rotate(45deg);
+    /*we need to prevent the arrows from getting buried under the next link*/
+    z-index: 1;
+    /*background same as links but the gradient will be rotated to compensate with the transform applied*/
+    background: #666;
+    background: linear-gradient(135deg, #666, #333);
+    /*stylish arrow design using box shadow*/
+    box-shadow: 2px -2px 0 2px #E0E0E0, 3px -3px 0 2px rgba(255, 255, 255, 0.1);
+    /*
+    5px - for rounded arrows and 
+    50px - to prevent hover glitches on the border created using shadows*/
+    border-radius: 0 5px 0 50px;
+}
+
+
+/*we dont need an arrow after the last link*/
+
+.breadcrumb a:last-child:after {
+    content: none;
+}
+
+.flat a,
+.flat a:after {
+    background: #eee;
+    color: #666;
+}
+
+.flat a:hover,
+.flat a:hover:after,
+{
+    background: #ff4081;
+    color: #fff;
+}
+
+.flat a.active,
+.flat a.active:after {
+    background: #136ad5;
+    color: #fff;
+}
+
+.flat {
+    margin-top: 8px;
+}
+
+.upLoadStyles {
+    /*position: fixed;
+    width: 14%;
+    height: 54%;*/
+    position: absolute;
+    width: 22%;
+    height: -7%;
+    bottom: 9px;
+    background-color: transparent;
+}
+
+.uploader {
+    height: 200px;
+}
+
+.uploader input {
+    display: none;
+}
+
+.footerstyles {
+    /*position: fixed;
+    bottom: 0px; */
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    text-align: center;
+    font-size: 13px;
+    /*position: absolute;
+    bottom: 0px;*/
+}
+
+.playerinfoo {
+    font-size: 12px;
+    font-weight: 400;
+    color: #4f4f4f;
+    padding-left: 4%;
+}
+
+@media (min-width:480px) and (max-width:768px) {
+    .mahi {
+        position: relative;
+        display: inline-block;
+        left: -100px !important;
+        border-left: 1px solid lightgray;
+        padding-left: 2px;
+    }
+}
+
+@media (min-width:769px) and (max-width:1200px) {
+    .mahi {
+        position: relative;
+        display: inline-block;
+        left: -170px !important;
+        border-left: 1px solid lightgray;
+        padding-left: 2px;
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    rightdiv {
+        position: absolute;
+        right: 17px;
+        padding-top: 10px;
+        cursor: pointer;
+        width: 71% !important;
+    }
+}
+
+@media (min-width:768px) and (max-width:1200px) {
+    .leftbtns {
+        padding: 12px;
+        font-size: 11px;
+        font-weight: 600;
+        width: 87%;
+        margin-left: 7%;
+        background-color: #d3d3d3;
+        font-family: inherit;
+        cursor: pointer;
+    }
+    .myactive {
+        background-color: #3c8fb0;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.player-img {
+    width: 165px;
+    border: 1px solid lightgrey;
+    height: 180px;
+    cursor: pointer;
+}
+.player-img1 {
+    width: 165px;
+    border: 1px solid lightgrey;
+    height: 180px;
+    cursor: pointer;
+}
+.player-img1:hover .delete {
+    display: block!important;
+}
+.delete{
+    cursor:pointer;
+    width:20px;
+    height:20px;
+    color:white;
+    /*background-color:white;*/
+    position: absolute;
+    top: 85px!important;
+    left: 91px!important;
+    z-index: 1;
+}
+
+.showme{ 
+display: none;
+}
+.showhim:hover .showme{
+display : block;
+}
+
+.textlabel {
+    margin-top: 74px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: -8px;
+    margin-left: 11px;
+}
+
+.star {
+    color: red;
+}
+
+.textcount {
+    margin: 0px;
+    font-size: 10px;
+    /* top: 22px; */
+    float: right;
+    padding-right: 15px;
+    font-weight: 500;
+}
+
+.textcount1 {
+    margin: 0px;
+    font-size: 10px;
+    /* top: 22px; */
+    float: right;
+    padding-right: 15px;
+    font-weight: 500;
+    margin-top: -17px;
+}
+
+.mobilevw {
+    display: none;
+}
+
+.webview {
+    display: inline-block;
+}
+
+.maindropdownfirst :focus {
+    outline: none;
+}
+
+.maindropdown2:focus {
+    outline: none;
+}
+
+.maindropdown2skill :focus {
+    outline: none;
+}
+
+select,
+select[size="0"],
+select[size="1"] {
+    border-radius: 0px;
+    border-color: none !important;
+}
+
+@media (min-width:300px) and (max-width:480px) {
+    .mobilevw {
+        display: inline-block;
+    }
+    .webview {
+        display: none;
+    }
+    .one-h5 {
+        display: none;
+    }
+    .steppdiv {
+        margin-left: 1%;
+        width: 97%;
+    }
+    .mybtnsub {
+        padding-left: 30%;
+        margin-top: 20px;
+        margin-bottom: 85px;
+        width: 100%;
+    }
+    .myfavinput {
+        height: 33px;
+        font-size: 12px;
+        width: 97%;
+        margin-left: 14px;
+    }
+    .maindropdownfirst {
+        margin: 0 7px 0 0px;
+        height: 33px;
+        width: 88%;
+        border-radius: 3px;
+        font-size: 12px;
+        color: #636c88;
+        margin-left: 14px;
+    }
+    .playerinfoo {
+        font-size: 12px;
+        font-weight: 400;
+        color: #4f4f4f;
+        padding-left: 8%;
+        margin-top: 10px;
+    }
+    .maindropdown2 {
+        margin: 0 7px 0 14px;
+        height: 33px;
+        width: 88%;
+        border-radius: 3px;
+        font-size: 12px;
+        color: #636c88;
+    }
+    .submitbtns {
+        width: 65px;
+        min-width: 27px;
+        padding: 0px !important;
+        margin: 0 10px;
+        background-color: #d9d9d9;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        height: 30px;
+        line-height: 10px;
+    }
+    .maindropdown2skill {
+        margin: 0 7px 0 14px;
+        height: 33px;
+        width: 88%;
+        border-radius: 3px;
+        font-size: 12px;
+        color: #636c88;
+    }
+    .playerinfoo {
+        padding-right: 8px;
+    }
+    .uploader {
+        width: 100%;
+    }
+    .player-img {
+        width: 100%;
+    }
+    .mobilecut {
+        overflow-y: hidden;
+        /* width: 172px; */
+        max-width: 152px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .marggg {
+        margin: 0px;
+    }
+    .mobilemahi {
+        width: 98%;
+        padding: 0px;
+    }
+    .mbl-input {
+        width: 90%;
+    }
+    .breadcrumb a {
+        font-size: 8px;
+    }
+    /*.mobilehide{
+    display: none;
+}*/
+}
+
+.infoicon {
+    height: 13px;
+    width: 17px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 2px;
+    padding: 1px;
+}
+
+
+/*.infodiv{
+   display: none;
+}
+.mahi{
+    cursor: pointer;
+}
+.mahi:hover .infodiv{
+   display: block;
+   width:120px;
+   height:50px;
+   position: absolute;
+}*/
+
+.mahi {
+    position: relative;
+    display: inline-block;
+    /*border-bottom: 1px dotted black;*/
+    right: 300px;
+    border-left: 1px solid lightgray;
+    height: 35px;
+    bottom: 13px;
+    padding-left: 2px;
+}
+
+.mahi .infodiv {
+    visibility: hidden;
+    width: 150px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 115%;
+    left: -21%;
+    margin-left: -60px;
+}
+
+.mahi .infodiv::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+}
+
+.mahi:hover .infodiv {
+    visibility: visible;
+}
+
+.password-info {
+    width: 255px;
+    word-break: break-all;
+    left: 26%;
+    padding: 6px;
+    position: relative;
+    background-color: #f5f5f5;
+    border: 1px solid #fff;
+    border-radius: 5px;
+}
+
+.padclasss {
+    padding-left: 0px;
+}
+.myselectt{
+        height: 28px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    background-color: #fafafa;
+    border-bottom-color: gainsboro;
+        font-size: 11px;
+        outline: none;
+        
+        
+}
+.myselectt:focus{
+     border-bottom: 1px solid blue;
+}
+/deep/ .mat-select-placeholder {
+    font-size: 11px !important;
+}
+
+/deep/ .mat-input-infix {
+    margin-top: -18px;
+}
+
+/deep/.mat-select-trigger {
+    min-width: 65px !important;
+}
+
+.mat-option {
+    color: rgba(0, 0, 0, .87);
+    height: 33px;
+    font-size: 12px;
+}
+
+.mat-input-element {
+    font-size: 12px;
+    color: rgba(0, 0, 0, .87) !important;
+}
+
+/deep/ .mat-select-value-text {
+    font-size: 12px !important;
+}
+.loadingIcon{
+    height:28px;
+    width:30px;
+        margin: auto;
+   
+}
+.spinner-div{
+        width: 107px;
+    position: absolute;
+    z-index: 99;    
+    padding-top: 1px;
+    padding-left: 5px;
+}
+.spinner-div1{
+        width: 230px;
+    position: absolute;
+    z-index: 99;
+    padding-top: 1px;
+}
+.spinner-div2{
+        width: 400px;
+    position: absolute;
+    z-index: 99;
+    padding-top: 1px;
+}
+.div-one{
+        min-height: 220px;
+}
